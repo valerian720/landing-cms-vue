@@ -34,16 +34,16 @@
 
 
 <script>
-import FooterBlock from '@/components/FooterBlock.vue'
-import ContactFormBlock from '@/components/ContactFormBlock.vue'
-import SelectedReviewsBlock from '@/components/SelectedReviewsBlock.vue'
-import SelectedBlogBlock from '@/components/SelectedBlogBlock.vue'
-import AboutBlock from '@/components/AboutBlock.vue'
-import ProductsBlock from '@/components/ProductsBlock.vue'
-import AdvantagesBlock from '@/components/AdvantagesBlock.vue'
-import SliderBlock from '@/components/SliderBlock.vue'
-import WideHeaderBlock from '@/components/WideHeaderBlock.vue'
 import TopHeaderBlock from '@/components/TopHeaderBlock.vue'
+import WideHeaderBlock from '@/components/WideHeaderBlock.vue'
+import SliderBlock from '@/components/SliderBlock.vue'
+import AdvantagesBlock from '@/components/AdvantagesBlock.vue'
+import ProductsBlock from '@/components/ProductsBlock.vue'
+import AboutBlock from '@/components/AboutBlock.vue'
+import SelectedBlogBlock from '@/components/SelectedBlogBlock.vue'
+import SelectedReviewsBlock from '@/components/SelectedReviewsBlock.vue'
+import ContactFormBlock from '@/components/ContactFormBlock.vue'
+import FooterBlock from '@/components/FooterBlock.vue'
 
 export default {
   components: {
