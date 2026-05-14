@@ -3,8 +3,8 @@
 <template>
   <RouterView />
   <!-- ШАПКА -->
-  <TopHeaderBlock />
-  <WideHeaderBlock />
+  <TopHeaderBlock :phone="pageStore.phone" :email="pageStore.email" />
+  <WideHeaderBlock :name="pageStore.name" />
 
   <!-- СЛАЙДЕР (карусель с промо текстом и картинкой) -->
   <SliderBlock />
@@ -45,7 +45,10 @@ import SelectedReviewsBlock from '@/components/SelectedReviewsBlock.vue'
 import ContactFormBlock from '@/components/ContactFormBlock.vue'
 import FooterBlock from '@/components/FooterBlock.vue'
 
+import { usePageStore } from '@/stores/page'
+
 export default {
+  props: [],
   components: {
     TopHeaderBlock,
     WideHeaderBlock,
@@ -57,6 +60,9 @@ export default {
     SelectedReviewsBlock,
     ContactFormBlock,
     FooterBlock,
+  },
+  data() {
+    return { pageStore: usePageStore() }
   },
 }
 </script>

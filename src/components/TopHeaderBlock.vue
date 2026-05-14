@@ -1,10 +1,10 @@
 <template>
-<div class="top-bar">
+  <div class="top-bar">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start">
-          <i class="bi bi-telephone-fill me-1"></i> +7 (495) 123-45-67 &nbsp;&nbsp;
-          <i class="bi bi-envelope-fill me-1"></i> hello@applefresh.ru
+          <i class="bi bi-telephone-fill me-1"></i> {{ phone }} &nbsp;&nbsp;
+          <i class="bi bi-envelope-fill me-1"></i> {{ email }}
         </div>
         <div class="col-md-6 text-center text-md-end">
           <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
@@ -21,6 +21,9 @@
 <script>
 export default {
 
-	props: {
-	}}
+  props: {
+    phone: String,
+    email: String,
+  }
+}
 </script>

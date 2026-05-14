@@ -1,8 +1,8 @@
 <template>
-<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <i class="bi bi-apple"></i> AppleFresh
+        <i class="bi bi-apple"></i> {{ name }}
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
         aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,6 +27,8 @@
 <script>
 export default {
 
-	props: {
-	}}
+  props: {
+    name: String
+  }
+}
 </script>
