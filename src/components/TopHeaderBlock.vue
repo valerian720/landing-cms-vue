@@ -14,10 +14,9 @@
           </a>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <a href="#" class="me-3"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="me-3"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="me-3"><i class="bi bi-telegram"></i></a>
-          <a href="#"><i class="bi bi-whatsapp"></i></a>
+          <a v-for="(link, name) in socials" :key="name" :href="link" target="blank" class="me-3">
+            <i :class="'bi bi-' + name"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -28,6 +27,7 @@ export default {
   props: {
     phone: String,
     email: String,
+    socials: Object,
   },
 
 }

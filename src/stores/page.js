@@ -7,13 +7,20 @@ export const usePageStore = defineStore("page", () => {
   const name = ref("");
   const phone = ref("");
   const email = ref("");
+  const socials = ref({});
   // ---
   function loadDefault() {
-    name.value = "AppleFresh!";
+    name.value = "AppleFresh";
     phone.value = "+7 (495) 123-45-67";
     email.value = "hello@applefresh.ru";
+    socials.value = {
+      facebook: "//www.facebook.com/groups/5497230480378581/",
+      instagram: "//www.instagram.com/applesfresh/",
+      telegram: "//t.me/AppleFresh/",
+      whatsapp: "//wa.me/AppleFresh/",
+    };
   }
   loadDefault();
 
-  return { name, phone, email, loadDefault };
+  return { name, phone, email, socials, loadDefault };
 });

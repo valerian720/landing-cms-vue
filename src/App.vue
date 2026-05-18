@@ -3,7 +3,7 @@
 <template>
   <RouterView />
   <!-- ШАПКА -->
-  <TopHeaderBlock :phone="pageStore.phone" :email="pageStore.email" />
+  <TopHeaderBlock :phone="pageStore.phone" :email="pageStore.email" :socials="pageStore.socials" />
   <WideHeaderBlock :name="pageStore.name" />
 
   <!-- СЛАЙДЕР (карусель с промо текстом и картинкой) -->
