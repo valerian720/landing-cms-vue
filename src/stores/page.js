@@ -8,6 +8,8 @@ export const usePageStore = defineStore("page", () => {
   const phone = ref("");
   const email = ref("");
   const socials = ref({});
+  const advantages = ref({});
+
   // ---
   function loadDefault() {
     name.value = "AppleFresh";
@@ -19,8 +21,35 @@ export const usePageStore = defineStore("page", () => {
       telegram: "//t.me/AppleFresh/",
       whatsapp: "//wa.me/AppleFresh/",
     };
+    advantages.value = {
+      "1": {
+        icon: "🍎",
+        title: "Свежий урожай",
+        description: "Срываем утром, доставляем в день заказа",
+      },
+      "2": {
+        icon: "🌿",
+        title: "Эко-продукция",
+        description: "Без пестицидов, ГМО и воска",
+      },
+      "3": {
+        icon: "🚚",
+        title: "Бесплатная доставка",
+        description: "От 1500₽ по Москве и области",
+      },
+      "4": {
+        icon: "👍",
+        title: "100% гарантия",
+        description: "Вернём деньги, если не понравится",
+      },
+      "5": {
+        icon: "💰",
+        title: "Цены от фермы",
+        description: "Никаких наценок посредников",
+      },
+    };
   }
   loadDefault();
 
-  return { name, phone, email, socials, loadDefault };
+  return { name, phone, email, socials, advantages, loadDefault };
 });

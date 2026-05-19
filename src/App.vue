@@ -10,7 +10,7 @@
   <SliderBlock />
 
   <!-- БЛОК С ПРЕИМУЩЕСТВАМИ (эмодзи + текст) -->
-  <AdvantagesBlock />
+  <AdvantagesBlock :advantages="pageStore.advantages" />
 
   <!-- СЛАЙДЕР С КАРТОЧКАМИ ТОВАРА -->
   <ProductsBlock />
