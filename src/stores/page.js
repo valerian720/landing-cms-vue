@@ -7,7 +7,9 @@ export const usePageStore = defineStore("page", () => {
   const name = ref("");
   const phone = ref("");
   const email = ref("");
+
   const socials = ref({});
+  const promoSlider = ref({});
   const advantages = ref({});
 
   // ---
@@ -20,6 +22,30 @@ export const usePageStore = defineStore("page", () => {
       instagram: "//www.instagram.com/applesfresh/",
       telegram: "//t.me/AppleFresh/",
       whatsapp: "//wa.me/AppleFresh/",
+    };
+    promoSlider.value = {
+      "1": {
+        image: "https://dummyimage.com/1280x720/fff/aaa",
+        title: "Свежайшие яблоки с фермы!",
+        description:
+          "Прямая доставка из экологически чистых садов. Вкус детства!",
+        actionText: "Выбрать сорт",
+        actionLink: "#products",
+      },
+      "2": {
+        image: "https://dummyimage.com/1280x720/fff/aaa",
+        title: "Скидка 15% на первый заказ",
+        description: "Подпишись на рассылку и получи промокод на корзину.",
+        actionText: "Узнать больше",
+        actionLink: "#contact",
+      },
+      "3": {
+        image: "https://dummyimage.com/1280x720/fff/aaa",
+        title: "Скидка 20% на второй заказ",
+        description: "Подпишись на рассылку и получи промокод на корзину.",
+        actionText: "Узнать больше",
+        actionLink: "#contact",
+      },
     };
     advantages.value = {
       "1": {
@@ -51,5 +77,5 @@ export const usePageStore = defineStore("page", () => {
   }
   loadDefault();
 
-  return { name, phone, email, socials, advantages, loadDefault };
+  return { name, phone, email, socials, promoSlider, advantages, loadDefault };
 });
