@@ -16,7 +16,7 @@
   <ProductsBlock />
 
   <!-- ОПИСАНИЕ МАГАЗИНА (h1 + текст + изображение) -->
-  <AboutBlock />
+  <AboutBlock :about="pageStore.about" />
 
   <!-- ИЗБРАННЫЕ ЗАПИСИ БЛОГА -->
   <SelectedBlogBlock />

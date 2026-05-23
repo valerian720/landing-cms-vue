@@ -11,6 +11,7 @@ export const usePageStore = defineStore("page", () => {
   const socials = ref({});
   const promoSlider = ref({});
   const advantages = ref({});
+  const about = ref({});
 
   // ---
   function loadDefault() {
@@ -74,8 +75,27 @@ export const usePageStore = defineStore("page", () => {
         description: "Никаких наценок посредников",
       },
     };
+    about.value = {
+      title: "AppleFresh — яблоки, влюбляющие с первого укуса",
+      text: [
+        "Мы семейная ферма, которая более 15 лет выращивает яблоки в экологически чистом районе. Собираем урожай вручную, сортируем и упаковываем с любовью. Наша миссия — подарить каждому столу настоящий, сочный вкус детства без химии и лишних добавок.",
+        "В наших яблоках сохраняются все витамины и минералы. Мы доставляем заказы в день сбора, чтобы вы наслаждались свежестью. Попробуйте разные сорта — от классических сладких до пикантных с кислинкой. Присоединяйтесь к сообществу здорового питания!",
+      ],
+      imgUrl: "https://dummyimage.com/1280x720/fff/aaa",
+      actionText: "Каталог сортов",
+      actionLink: "#products",
+    };
   }
   loadDefault();
 
-  return { name, phone, email, socials, promoSlider, advantages, loadDefault };
+  return {
+    name,
+    phone,
+    email,
+    socials,
+    promoSlider,
+    advantages,
+    about,
+    loadDefault,
+  };
 });
