@@ -13,6 +13,9 @@ export const usePageStore = defineStore("page", () => {
   const advantages = ref({});
   const about = ref({});
 
+  const ratingThreshhold = ref(0);
+  const reviews = ref({});
+
   // ---
   function loadDefault() {
     name.value = "AppleFresh";
@@ -85,8 +88,60 @@ export const usePageStore = defineStore("page", () => {
       actionText: "Каталог сортов",
       actionLink: "#products",
     };
+    ratingThreshhold.value = 4;
+    reviews.value = {
+      list: [
+        {
+          rating: 5.0,
+          text:
+            "Самые сочные яблоки, которые я пробовал! Заказываю Гренни Смит для выпечки - всегда идеальная кислинка. Доставка быстрая, курьер вежливый.",
+          author: {
+            name: "Алексей К.",
+            description: "постоянный клиент",
+            avatar: "https://dummyimage.com/60x60/fff/aaa",
+          },
+        },
+        {
+          rating: 4,
+          text:
+            "Ребёнок обожает Фуджи - очень сладкие, без единой кислинки. Упаковано аккуратно, ни одно яблоко не помялось. Обязательно закажу ещё!",
+          author: {
+            name: "Елена М.",
+            description: "мама двоих детей",
+            avatar: "https://dummyimage.com/60x60/fff/aaa",
+          },
+        },
+        {
+          rating: 5,
+          text:
+            "Удивительный вкус и аромат - как из детства, когда бабушка привозила яблоки из деревни. Всем рекомендую, качество на высоте!",
+          author: {
+            name: "Дмитрий В.",
+            description: "шеф-повар",
+            avatar: "https://dummyimage.com/60x60/fff/aaa",
+          },
+        },
+        {
+          rating: 2,
+          text:
+            "Отвратительные яблоки, приехали помятые и с плесенью. На письма уже неделю не отвечают.",
+          author: {
+            name: "Иван В.",
+            description: "дальнобойщик",
+            avatar: "https://dummyimage.com/60x60/fff/aaa",
+          },
+        },
+      ],
+    };
   }
   loadDefault();
+
+  function setRatingThreshhold(newNumber, max = 5, min = 1) {
+    let number = newNumber;
+    number = Math.min(number, max);
+    number = Math.max(number, min);
+    ratingThreshhold.value = number;
+  }
 
   return {
     name,
@@ -96,6 +151,9 @@ export const usePageStore = defineStore("page", () => {
     promoSlider,
     advantages,
     about,
+    ratingThreshhold,
+    reviews,
     loadDefault,
+    setRatingThreshhold,
   };
 });

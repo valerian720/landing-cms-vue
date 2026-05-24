@@ -200,3 +200,15 @@ body {
 hr {
   opacity: 0.3;
 }
+
+.form-range::-webkit-slider-thumb {
+  background-color: #3d8540;
+}
+
+.form-range::-moz-range-thumb {
+  background-color: #3d8540;
+}
+
+.form-range::-webkit-slider-thumb:active {
+  background-color: #55b458;
+}
