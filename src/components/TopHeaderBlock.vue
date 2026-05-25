@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6 text-center text-md-end">
           <a v-for="(link, name) in socials" :key="name" :href="link" target="blank" class="me-3">
-            <i :class="'bi bi-' + name"></i>
+            <i class="bi" :class="'bi-' + name"></i>
           </a>
         </div>
       </div>
