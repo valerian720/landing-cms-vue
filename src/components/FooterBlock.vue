@@ -5,15 +5,13 @@
         <div class="col-md-4">
           <div class="d-flex align-items-center">
             <i class="bi bi-apple fs-1 text-success me-2"></i>
-            <h4 class="fw-bold mb-0">AppleFresh</h4>
+            <h4 class="fw-bold mb-0">{{ name }}</h4>
           </div>
-          <p class="mt-3 text-light-50">Свежие яблоки высшего качества с доставкой по всей России. Натуральные
-            фермерские продукты для вашей семьи.</p>
+          <p class="mt-3 text-light-50">{{ slogan.long }}</p>
           <div class="mt-3">
-            <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-            <a href="#" class="text-white me-3"><i class="bi bi-youtube fs-5"></i></a>
-            <a href="#" class="text-white"><i class="bi bi-tiktok fs-5"></i></a>
+            <a v-for="(link, name) in socials" :key="name" :href="link" target="blank" class="text-white me-3">
+              <i class="fs-5 bi" :class="'bi-' + name"></i>
+            </a>
           </div>
         </div>
         <div class="col-md-2 footer-links">
@@ -37,16 +35,16 @@
         <div class="col-md-3">
           <h5 class="fw-bold">Контакты</h5>
           <ul class="list-unstyled">
-            <li><i class="bi bi-geo-alt-fill me-2"></i> г. Москва, ул. Яблоневая, 12</li>
-            <li><i class="bi bi-telephone-fill me-2"></i> +7 (495) 123-45-67</li>
-            <li><i class="bi bi-envelope-fill me-2"></i> hello@applefresh.ru</li>
+            <li><i class="bi bi-geo-alt-fill me-2"></i>{{ address }}</li>
+            <li><i class="bi bi-telephone-fill me-2"></i>{{ phone }}</li>
+            <li><i class="bi bi-envelope-fill me-2"></i> {{ email }}</li>
             <li><i class="bi bi-clock-fill me-2"></i> Ежедневно: 9:00 - 21:00</li>
           </ul>
         </div>
       </div>
       <hr class="mt-4 opacity-25">
       <div class="text-center pt-2">
-        <small>© {{ new Date().getFullYear() }} AppleFresh — Магазин фермерских яблок. Все права защищены.</small>
+        <small>© {{ new Date().getFullYear() }} {{ slogan.short }} Все права защищены.</small>
       </div>
     </div>
   </footer>
@@ -57,6 +55,12 @@
 export default {
 
   props: {
+    phone: String,
+    email: String,
+    address: String,
+    name: String,
+    slogan: Object,
+    socials: Object,
   }
 }
 </script>

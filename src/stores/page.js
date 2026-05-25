@@ -2,11 +2,13 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 
 export const usePageStore = defineStore("page", () => {
-  // const doubleCount = computed(() => count.value * 2);
-  // ---
   const name = ref("");
   const phone = ref("");
+  const address = ref("");
+  const workHours = ref("");
   const email = ref("");
+
+  const slogan = ref({});
 
   const socials = ref({});
   const promoSlider = ref({});
@@ -19,7 +21,14 @@ export const usePageStore = defineStore("page", () => {
   // ---
   function loadDefault() {
     name.value = "AppleFresh";
+    slogan.value = {
+      short: "AppleFresh — Магазин фермерских яблок.",
+      long:
+        "Свежие яблоки высшего качества с доставкой по всей России. Натуральные фермерские продукты для вашей семьи.",
+    };
     phone.value = "+7 (495) 123-45-67";
+    address.value = "г. Москва, ул. Яблоневая, 12";
+    workHours.value = "Ежедневно: 9:00 - 21:00";
     email.value = "hello@applefresh.ru";
     socials.value = {
       facebook: "//www.facebook.com/groups/5497230480378581/",
@@ -145,6 +154,9 @@ export const usePageStore = defineStore("page", () => {
 
   return {
     name,
+    slogan,
+    address,
+    workHours,
     phone,
     email,
     socials,

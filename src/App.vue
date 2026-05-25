@@ -25,7 +25,11 @@
   <div class="m-3 col-4 d-none">
     <h3>Rating threshhold</h3>
     <input type="range" class="form-range" min="1" max="5" id="ratingThreshhold" :value="pageStore.ratingThreshhold"
-      @change="e => { pageStore.setRatingThreshhold(e.target.value) }">
+      @change="
+        (e) => {
+          pageStore.setRatingThreshhold(e.target.value)
+        }
+      " />
     <div class="d-flex justify-content-between">
       <span v-for="index in 5" :key="index">{{ index }}</span>
     </div>
@@ -36,10 +40,9 @@
   <ContactFormBlock />
 
   <!-- ФУТЕР С ССЫЛКАМИ -->
-  <FooterBlock />
-
+  <FooterBlock :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address" :name="pageStore.name"
+    :slogan="pageStore.slogan" :socials="pageStore.socials" />
 </template>
-
 
 <script>
 import TopHeaderBlock from '@/components/TopHeaderBlock.vue'
