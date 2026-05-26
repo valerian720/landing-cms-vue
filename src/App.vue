@@ -19,7 +19,7 @@
   <AboutBlock :about="pageStore.about" />
 
   <!-- ИЗБРАННЫЕ ЗАПИСИ БЛОГА -->
-  <SelectedBlogBlock />
+  <SelectedBlogBlock :posts="pageStore.blogPosts" />
 
   <!-- ПОСЛЕДНИЕ ОТЗЫВЫ -->
   <div class="m-3 col-4 d-none">

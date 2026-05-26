@@ -14,6 +14,7 @@ export const usePageStore = defineStore("page", () => {
   const promoSlider = ref({});
   const advantages = ref({});
   const about = ref({});
+  const blogPosts = ref({});
 
   const ratingThreshhold = ref(0);
   const reviews = ref({});
@@ -97,6 +98,43 @@ export const usePageStore = defineStore("page", () => {
       actionText: "Каталог сортов",
       actionLink: "#products",
     };
+    blogPosts.value = {
+      displayLimit: 3,
+      posts: [
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          tags: ["Рецепты"],
+          title: "Шарлотка за 30 минут: секреты пышности",
+          shortDescription:
+            "Идеальный рецепт с кисло-сладкими яблоками. Корж получается воздушным и влажным.",
+          link: "/blog/1",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          tags: ["Полезное"],
+          title: "5 причин есть яблоки каждый день",
+          shortDescription:
+            "Иммунитет, клетчатка, молодость кожи — рассказываем о реальной пользе.",
+          link: "/blog/2",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          tags: ["Советы"],
+          title: "Как выбрать самые сладкие яблоки?",
+          shortDescription:
+            "Отличаем сорта, определяем зрелость и сохраняем свежесть на недели.",
+          link: "/blog/3",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          tags: ["Советы"],
+          title: "Как выбрать самые лучшие яблоки для сидра?",
+          shortDescription:
+            "Отличаем сорта лучше всего подходящие под ферментирование.",
+          link: "/blog/4",
+        },
+      ],
+    };
     ratingThreshhold.value = 4;
     reviews.value = {
       list: [
@@ -163,6 +201,7 @@ export const usePageStore = defineStore("page", () => {
     promoSlider,
     advantages,
     about,
+    blogPosts,
     ratingThreshhold,
     reviews,
     loadDefault,
