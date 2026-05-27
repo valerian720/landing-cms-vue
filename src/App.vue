@@ -13,7 +13,7 @@
   <AdvantagesBlock :advantages="pageStore.advantages" />
 
   <!-- СЛАЙДЕР С КАРТОЧКАМИ ТОВАРА -->
-  <ProductsBlock />
+  <ProductsBlock :products="pageStore.products" />
 
   <!-- ОПИСАНИЕ МАГАЗИНА (h1 + текст + изображение) -->
   <AboutBlock :about="pageStore.about" />

@@ -19,6 +19,8 @@ export const usePageStore = defineStore("page", () => {
   const ratingThreshhold = ref(0);
   const reviews = ref({});
 
+  const products = ref({});
+
   // ---
   function loadDefault() {
     name.value = "AppleFresh";
@@ -180,6 +182,45 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
     };
+
+    products.value = {
+      list: [
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          url: "/products/1",
+          name: "Гренни Смит",
+          shortDescription:
+            "Хрустящие, кисло-сладкие яблоки. Идеальны для пирогов.",
+          price: "199",
+          priceSymbol: "₽/кг",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          url: "/products/2",
+          name: "Фуджи",
+          shortDescription: "Невероятно сладкие, сочные, с медовым ароматом.",
+          price: "249",
+          priceSymbol: "₽/кг",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          url: "/products/3",
+          name: "Голден",
+          shortDescription: "Нежные, маслянистые, с лёгкой кислинкой.",
+          price: "219",
+          priceSymbol: "₽/кг",
+        },
+        {
+          img: "https://dummyimage.com/1280x720/fff/aaa",
+          url: "/products/4",
+          name: "Семеренко",
+          shortDescription: "Знаменитый советский сорт, ароматный и хрустящий.",
+          price: "179",
+          priceSymbol: "₽/кг",
+        },
+      ],
+      displayAmount: 5,
+    };
   }
   loadDefault();
 
@@ -204,6 +245,7 @@ export const usePageStore = defineStore("page", () => {
     blogPosts,
     ratingThreshhold,
     reviews,
+    products,
     loadDefault,
     setRatingThreshhold,
   };

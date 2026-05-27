@@ -212,3 +212,10 @@ hr {
 .form-range::-webkit-slider-thumb:active {
   background-color: #55b458;
 }
+
+.round-selector-dots {
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50%;
+  margin: 0 6px;
+}
