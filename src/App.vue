@@ -39,12 +39,16 @@
   <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
   <ContactFormBlock />
 
+  <SettingsPanelBlock />
+
   <!-- ФУТЕР С ССЫЛКАМИ -->
   <FooterBlock :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address" :name="pageStore.name"
     :slogan="pageStore.slogan" :socials="pageStore.socials" />
+  div
 </template>
 
 <script>
+
 import TopHeaderBlock from '@/components/TopHeaderBlock.vue'
 import WideHeaderBlock from '@/components/WideHeaderBlock.vue'
 import SliderBlock from '@/components/SliderBlock.vue'
@@ -55,6 +59,7 @@ import SelectedBlogBlock from '@/components/SelectedBlogBlock.vue'
 import SelectedReviewsBlock from '@/components/SelectedReviewsBlock.vue'
 import ContactFormBlock from '@/components/ContactFormBlock.vue'
 import FooterBlock from '@/components/FooterBlock.vue'
+import SettingsPanelBlock from '@/components/SettingsPanelBlock.vue'
 
 import { usePageStore } from '@/stores/page'
 
@@ -71,6 +76,7 @@ export default {
     SelectedReviewsBlock,
     ContactFormBlock,
     FooterBlock,
+    SettingsPanelBlock,
   },
   data() {
     return { pageStore: usePageStore() }

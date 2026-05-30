@@ -4,6 +4,7 @@
       <a class="navbar-brand" :href="$route.fullPath">
         <i class="bi bi-apple"></i> {{ name }}
       </a>
+      <ShowSettingsBtnBlock />
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
         aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,8 +26,12 @@
 
 
 <script>
-export default {
+import ShowSettingsBtnBlock from "@/components/ShowSettingsBtnBlock.vue";
 
+export default {
+  components: {
+    ShowSettingsBtnBlock
+  },
   props: {
     name: String
   }
