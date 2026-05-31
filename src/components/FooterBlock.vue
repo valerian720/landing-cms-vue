@@ -38,7 +38,7 @@
             <li><i class="bi bi-geo-alt-fill me-2"></i>{{ address }}</li>
             <li><i class="bi bi-telephone-fill me-2"></i>{{ phone }}</li>
             <li><i class="bi bi-envelope-fill me-2"></i> {{ email }}</li>
-            <li><i class="bi bi-clock-fill me-2"></i> Ежедневно: 9:00 - 21:00</li>
+            <li><i class="bi bi-clock-fill me-2"></i>{{ workHours }}</li>
           </ul>
         </div>
       </div>
@@ -58,6 +58,7 @@ export default {
     phone: String,
     email: String,
     address: String,
+    workHours: String,
     name: String,
     slogan: Object,
     socials: Object,

@@ -42,8 +42,8 @@
   <SettingsPanelBlock />
 
   <!-- ФУТЕР С ССЫЛКАМИ -->
-  <FooterBlock :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address" :name="pageStore.name"
-    :slogan="pageStore.slogan" :socials="pageStore.socials" />
+  <FooterBlock :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address"
+    :workHours="pageStore.workHours" :name="pageStore.name" :slogan="pageStore.slogan" :socials="pageStore.socials" />
   div
 </template>
 
