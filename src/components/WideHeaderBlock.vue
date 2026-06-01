@@ -11,12 +11,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarMain">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
-          <li class="nav-item"><a class="nav-link" href="#advantages">Преимущества</a></li>
-          <li class="nav-item"><a class="nav-link" href="#products">Товары</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
-          <li class="nav-item"><a class="nav-link" href="#blog">Блог</a></li>
-          <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
+          <li class="nav-item" v-for="(nav, navKey) in navigationLinks.list" :key="navKey">
+            <a class="nav-link" :href="nav.url">{{ nav.title }}</a>
+          </li>
         </ul>
         <a href="#" class="btn btn-apple ms-lg-3">Корзина <i class="bi bi-bag-check"></i></a>
       </div>
@@ -33,7 +30,8 @@ export default {
     ShowSettingsBtnBlock
   },
   props: {
-    name: String
+    name: String,
+    navigationLinks: Object,
   }
 }
 </script>

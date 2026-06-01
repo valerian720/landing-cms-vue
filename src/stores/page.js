@@ -21,6 +21,8 @@ export const usePageStore = defineStore("page", () => {
 
   const products = ref({});
 
+  const navigationLinks = ref({});
+
   // ---
   function loadDefault() {
     name.value = "AppleFresh";
@@ -221,6 +223,35 @@ export const usePageStore = defineStore("page", () => {
       ],
       displayAmount: 5,
     };
+    navigationLinks.value = {
+      list: [
+        {
+          title: "Преимущества",
+          url: "#advantages",
+        },
+        {
+          title: "Товары",
+          url: "#products",
+        },
+        {
+          title: "О нас",
+          url: "#about",
+        },
+        {
+          title: "Блог",
+          url: "#blog",
+        },
+        {
+          title: "Отзывы",
+          url: "#reviews",
+        },
+        {
+          title: "Контакты",
+          url: "#contact",
+        },
+      ],
+      displayDepthLevel: 1,
+    };
   }
   loadDefault();
 
@@ -246,6 +277,7 @@ export const usePageStore = defineStore("page", () => {
     ratingThreshhold,
     reviews,
     products,
+    navigationLinks,
     loadDefault,
     setRatingThreshhold,
   };

@@ -4,7 +4,7 @@
   <RouterView />
   <!-- ШАПКА -->
   <TopHeaderBlock :phone="pageStore.phone" :email="pageStore.email" :socials="pageStore.socials" />
-  <WideHeaderBlock :name="pageStore.name" />
+  <WideHeaderBlock :name="pageStore.name" :navigationLinks="pageStore.navigationLinks" />
 
   <!-- СЛАЙДЕР (карусель с промо текстом и картинкой) -->
   <SliderBlock :slides="pageStore.promoSlider" />
