@@ -32,7 +32,7 @@
       <h2>Настройки карусели</h2>
       <p>TODO</p>
       <h2>Настройки преимуществ</h2>
-      <p>TODO</p>
+      <AdvantagesArrayRedactorBlock />
       <h2>Настройки товаров</h2>
       <p>TODO</p>
       <h2>Настройки блога</h2>
@@ -54,8 +54,10 @@
 
 <script>
 import { usePageStore } from '@/stores/page'
+import AdvantagesArrayRedactorBlock from '@/components/settings/AdvantagesArrayRedactorBlock.vue'
 
 export default {
+  components: { AdvantagesArrayRedactorBlock },
   props: {},
   data() {
     return { pageStore: usePageStore() }

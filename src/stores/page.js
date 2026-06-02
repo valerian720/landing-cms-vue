@@ -66,30 +66,41 @@ export const usePageStore = defineStore("page", () => {
       },
     };
     advantages.value = {
-      "1": {
-        icon: "🍎",
-        title: "Свежий урожай",
-        description: "Срываем утром, доставляем в день заказа",
+      list: [
+        {
+          icon: "🍎",
+          title: "Свежий урожай",
+          description: "Срываем утром, доставляем в день заказа",
+        },
+        {
+          icon: "🌿",
+          title: "Эко-продукция",
+          description: "Без пестицидов, ГМО и воска",
+        },
+        {
+          icon: "🚚",
+          title: "Бесплатная доставка",
+          description: "От 1500₽ по Москве и области",
+        },
+        {
+          icon: "👍",
+          title: "100% гарантия",
+          description: "Вернём деньги, если не понравится",
+        },
+        {
+          icon: "💰",
+          title: "Цены от фермы",
+          description: "Никаких наценок посредников",
+        },
+      ],
+      addAdvantage(newAdvantage) {
+        advantages.value.list.push(newAdvantage);
       },
-      "2": {
-        icon: "🌿",
-        title: "Эко-продукция",
-        description: "Без пестицидов, ГМО и воска",
+      updateAdvantage(index, advantage) {
+        advantages.value.list[index] = advantage;
       },
-      "3": {
-        icon: "🚚",
-        title: "Бесплатная доставка",
-        description: "От 1500₽ по Москве и области",
-      },
-      "4": {
-        icon: "👍",
-        title: "100% гарантия",
-        description: "Вернём деньги, если не понравится",
-      },
-      "5": {
-        icon: "💰",
-        title: "Цены от фермы",
-        description: "Никаких наценок посредников",
+      deleteAdvantage(index) {
+        advantages.value.list.splice(index, 1);
       },
     };
     about.value = {
