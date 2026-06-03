@@ -2,13 +2,13 @@
   <div class="container my-5">
     <div id="promoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" v-for="(slide, key, index) in slides" :key="key" data-bs-target="#promoCarousel"
+        <button type="button" v-for="(slide, index) in slides.list" :key="index" data-bs-target="#promoCarousel"
           :data-bs-slide-to="index" :class="index === 0 ? 'active' : ''" :aria-current="index === 0"
           :aria-label="slide.title"></button>
       </div>
       <div class="carousel-inner rounded-4 shadow">
-        <div class="carousel-item" :class="index === 0 ? 'active' : ''" v-for="(slide, key, index) in slides"
-          :key="key">
+        <div class="carousel-item" :class="index === 0 ? 'active' : ''" v-for="(slide, index) in slides.list"
+          :key="index">
           <img :src="slide.image" class="d-block w-100" :alt="slide.title" style="height: 400px; object-fit: cover;">
           <div class="carousel-caption d-none d-md-block">
             <h3>{{ slide.title }}</h3>

@@ -42,28 +42,30 @@ export const usePageStore = defineStore("page", () => {
       whatsapp: "//wa.me/AppleFresh/",
     };
     promoSlider.value = {
-      "1": {
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-        title: "Свежайшие яблоки с фермы!",
-        description:
-          "Прямая доставка из экологически чистых садов. Вкус детства!",
-        actionText: "Выбрать сорт",
-        actionLink: "#products",
-      },
-      "2": {
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-        title: "Скидка 15% на первый заказ",
-        description: "Подпишись на рассылку и получи промокод на корзину.",
-        actionText: "Узнать больше",
-        actionLink: "#contact",
-      },
-      "3": {
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-        title: "Скидка 20% на второй заказ",
-        description: "Подпишись на рассылку и получи промокод на корзину.",
-        actionText: "Узнать больше",
-        actionLink: "#contact",
-      },
+      list: [
+        {
+          image: "https://dummyimage.com/1280x720/fff/aaa",
+          title: "Свежайшие яблоки с фермы!",
+          description:
+            "Прямая доставка из экологически чистых садов. Вкус детства!",
+          actionText: "Выбрать сорт",
+          actionLink: "#products",
+        },
+        {
+          image: "https://dummyimage.com/1280x720/fff/aaa",
+          title: "Скидка 15% на первый заказ",
+          description: "Подпишись на рассылку и получи промокод на корзину.",
+          actionText: "Узнать больше",
+          actionLink: "#contact",
+        },
+        {
+          image: "https://dummyimage.com/1280x720/fff/aaa",
+          title: "Скидка 20% на второй заказ",
+          description: "Подпишись на рассылку и получи промокод на корзину.",
+          actionText: "Узнать больше",
+          actionLink: "#contact",
+        },
+      ],
     };
     advantages.value = {
       list: [
