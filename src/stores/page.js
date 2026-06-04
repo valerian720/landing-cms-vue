@@ -36,10 +36,34 @@ export const usePageStore = defineStore("page", () => {
     workHours.value = "Ежедневно: 9:00 - 21:00";
     email.value = "hello@applefresh.ru";
     socials.value = {
-      facebook: "//www.facebook.com/groups/5497230480378581/",
-      instagram: "//www.instagram.com/applesfresh/",
-      telegram: "//t.me/AppleFresh/",
-      whatsapp: "//wa.me/AppleFresh/",
+      list: [
+        {
+          type: "facebook",
+          url: "//www.facebook.com/groups/5497230480378581/",
+        },
+        {
+          type: "instagram",
+          url: "//www.instagram.com/applesfresh/",
+        },
+        {
+          type: "telegram",
+          url: "///t.me/AppleFresh/",
+        },
+        {
+          type: "whatsapp",
+          url: "//wa.me/AppleFresh/",
+        },
+      ],
+
+      add(newItem) {
+        socials.value.list.push(newItem);
+      },
+      update(index, item) {
+        socials.value.list[index] = item;
+      },
+      delete(index) {
+        socials.value.list.splice(index, 1);
+      },
     };
     promoSlider.value = {
       list: [

@@ -9,8 +9,9 @@
           </div>
           <p class="mt-3 text-light-50">{{ slogan.long }}</p>
           <div class="mt-3">
-            <a v-for="(link, name) in socials" :key="name" :href="link" target="blank" class="text-white me-3">
-              <i class="fs-5 bi" :class="'bi-' + name"></i>
+            <a v-for="(social, index) in socials.list" :key="index" :href="social.url" target="blank"
+              class="text-white me-3">
+              <i class="fs-5 bi" :class="'bi-' + social.type"></i>
             </a>
           </div>
         </div>

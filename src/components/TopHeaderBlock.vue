@@ -14,8 +14,8 @@
           </a>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <a v-for="(link, name) in socials" :key="name" :href="link" target="blank" class="me-3">
-            <i class="bi" :class="'bi-' + name"></i>
+          <a v-for="(social, index) in socials.list" :key="index" :href="social.url" target="blank" class="me-3">
+            <i class="bi" :class="'bi-' + social.type"></i>
           </a>
         </div>
       </div>

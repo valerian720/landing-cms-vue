@@ -28,7 +28,7 @@
       </div>
 
       <h2>Настройки ссылок</h2>
-      <p>TODO</p>
+      <SocialsArrayRedactorBlock />
       <h2>Настройки карусели</h2>
       <p>TODO</p>
       <h2>Настройки преимуществ</h2>
@@ -55,9 +55,10 @@
 <script>
 import { usePageStore } from '@/stores/page'
 import AdvantagesArrayRedactorBlock from '@/components/settings/AdvantagesArrayRedactorBlock.vue'
+import SocialsArrayRedactorBlock from '@/components/settings/SocialsArrayRedactorBlock.vue'
 
 export default {
-  components: { AdvantagesArrayRedactorBlock },
+  components: { AdvantagesArrayRedactorBlock, SocialsArrayRedactorBlock },
   props: {},
   data() {
     return { pageStore: usePageStore() }
