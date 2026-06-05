@@ -3,7 +3,7 @@
     <ArrayRedactorBlock :items="advantages" @add-item="store.advantages.addAdvantage"
       @update-item="({ index, item }) => store.advantages.updateAdvantage(index, item)"
       @delete-item="store.advantages.deleteAdvantage">
-      <!-- Слот для отображения одного пользователя в списке -->
+      <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
           {{ item.icon }} <strong>{{ item.title }}</strong>

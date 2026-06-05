@@ -288,6 +288,16 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       displayDepthLevel: 1,
+
+      add(newItem) {
+        navigationLinks.value.list.push(newItem);
+      },
+      update(index, item) {
+        navigationLinks.value.list[index] = item;
+      },
+      delete(index) {
+        navigationLinks.value.list.splice(index, 1);
+      },
     };
   }
   loadDefault();

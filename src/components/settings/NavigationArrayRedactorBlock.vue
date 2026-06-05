@@ -1,11 +1,12 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="socials" @add-item="store.socials.add"
-      @update-item="({ index, item }) => store.socials.update(index, item)" @delete-item="store.socials.delete">
+    <ArrayRedactorBlock :items="navigationLinks" @add-item="store.navigationLinks.add"
+      @update-item="({ index, item }) => store.navigationLinks.update(index, item)"
+      @delete-item="store.navigationLinks.delete">
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
-          {{ item.type }}
+          {{ item.title }}
           <p class="overflow-auto">{{ item.url }}</p>
         </div>
       </template>
@@ -14,12 +15,8 @@
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
-            <label class="form-label">Тип соцсети</label>
-            <input type="text" class="form-control" list="datalistSocials" v-model="item.type" />
-
-            <datalist id="datalistSocials">
-              <option :value="network" v-for="network in suggestedSocialNetworks" :key="network" />
-            </datalist>
+            <label class="form-label">Заголовок ссылки</label>
+            <input type="text" class="form-control" v-model="item.title" />
           </div>
           <div class="mb-3">
             <label class="form-label">Ссылка</label>
@@ -42,12 +39,9 @@ export default {
     return { store };
   },
   computed: {
-    socials() {
-      return this.store.socials.list;
+    navigationLinks() {
+      return this.store.navigationLinks.list;
     },
-    suggestedSocialNetworks() {
-      return ['facebook', 'instagram', 'telegram', 'whatsapp'];
-    }
   }
 };
 </script>
