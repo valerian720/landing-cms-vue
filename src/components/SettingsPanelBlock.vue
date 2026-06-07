@@ -7,8 +7,9 @@
     </div>
     <div class="offcanvas-body">
       <h2 class="" data-bs-toggle="collapse" data-bs-target="#collapseShopSettings" aria-expanded="true"
-        aria-controls="collapseShopSettings" type="button">Настройки магазина <i
-          class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i></h2>
+        aria-controls="collapseShopSettings" type="button">Настройки магазина
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
       <div class="row p-2 border-bottom show" id="collapseShopSettings">
         <h4>Название</h4>
         <input type="text" class="form-control" id="shopName" :value="pageStore.name"
@@ -27,19 +28,54 @@
           @change="(e) => (pageStore.workHours = e.target.value)" />
       </div>
 
-      <h2>Настройки ссылок</h2>
-      <SocialsArrayRedactorBlock />
-      <NavigationArrayRedactorBlock />
-      <h2>Настройки карусели</h2>
+      <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopLinks" type="button">Настройки ссылок
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
+      <div class="row p-2 border-bottom show" id="collapseShopLinks">
+        <SocialsArrayRedactorBlock />
+        <NavigationArrayRedactorBlock />
+      </div>
+      <h2>Настройки карусели
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
       <p>TODO</p>
-      <h2>Настройки преимуществ</h2>
-      <AdvantagesArrayRedactorBlock />
-      <h2>Настройки товаров</h2>
+      <h2 data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopAdvantages" type="button">Настройки преимуществ
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
+      <div class="row p-2 border-bottom show" id="collapseShopAdvantages">
+        <AdvantagesArrayRedactorBlock />
+      </div>
+      <h2>Настройки товаров
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
       <p>TODO</p>
-      <h2>Настройки блога</h2>
+      <h2>Настройки блога
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
       <p>TODO</p>
-      <h2>Настройки отзывов</h2>
-      <p>TODO</p>
+      <h2 data-bs-target="#collapseShopReviews" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopReviews" type="button">Настройки отзывов
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
+      <div class="row p-2 border-bottom show" id="collapseShopReviews">
+        <ReviewsArrayRedactorBlock />
+
+        <div class="m-3">
+          <h3>Минимальный рейтинг отзыва</h3>
+          <input type="range" class="form-range" min="1" max="5" id="ratingThreshhold"
+            :value="pageStore.ratingThreshhold" @change="
+              (e) => {
+                pageStore.setRatingThreshhold(e.target.value)
+              }
+            " />
+          <div class="d-flex justify-content-between">
+            <span v-for="index in 5" :key="index">{{ index }}</span>
+          </div>
+        </div>
+      </div>
+
       <!-- <button type="button" name="save-btn" id="save-btn" class="btn btn-apple mx-1">
         Сохранить
       </button> -->
@@ -58,9 +94,10 @@ import { usePageStore } from '@/stores/page'
 import AdvantagesArrayRedactorBlock from '@/components/settings/AdvantagesArrayRedactorBlock.vue'
 import SocialsArrayRedactorBlock from '@/components/settings/SocialsArrayRedactorBlock.vue'
 import NavigationArrayRedactorBlock from '@/components/settings/NavigationArrayRedactorBlock.vue'
+import ReviewsArrayRedactorBlock from './settings/ReviewsArrayRedactorBlock.vue';
 
 export default {
-  components: { AdvantagesArrayRedactorBlock, SocialsArrayRedactorBlock, NavigationArrayRedactorBlock },
+  components: { AdvantagesArrayRedactorBlock, SocialsArrayRedactorBlock, NavigationArrayRedactorBlock, ReviewsArrayRedactorBlock },
   props: {},
   data() {
     return { pageStore: usePageStore() }

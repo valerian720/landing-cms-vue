@@ -6,7 +6,7 @@
         <template v-for="(review, key) in reviews.list" :key="key">
           <div class="col-md-4" v-if="review.rating >= ratingThreshhold">
             <div class="testimonial-card">
-              <i class="bi bi-star-fill text-warning" v-for="index in review.rating" :key="index"></i>
+              <i class="bi bi-star-fill text-warning" v-for="index in parseInt(review.rating)" :key="index"></i>
               <i class="bi bi-star text-warning" v-for="index in 5 - review.rating" :key="index"></i>
               <p class="mt-3 fst-italic">“{{ review.text }}”</p>
               <div class="d-flex align-items-center mt-3">

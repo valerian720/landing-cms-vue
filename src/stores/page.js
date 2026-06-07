@@ -220,6 +220,16 @@ export const usePageStore = defineStore("page", () => {
           },
         },
       ],
+
+      add(newItem) {
+        reviews.value.list.push(newItem);
+      },
+      update(index, item) {
+        reviews.value.list[index] = item;
+      },
+      delete(index) {
+        reviews.value.list.splice(index, 1);
+      },
     };
 
     products.value = {
