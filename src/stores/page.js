@@ -119,13 +119,13 @@ export const usePageStore = defineStore("page", () => {
           description: "Никаких наценок посредников",
         },
       ],
-      addAdvantage(newAdvantage) {
-        advantages.value.list.push(newAdvantage);
+      add(element) {
+        advantages.value.list.push(element);
       },
-      updateAdvantage(index, advantage) {
-        advantages.value.list[index] = advantage;
+      update(index, element) {
+        advantages.value.list[index] = element;
       },
-      deleteAdvantage(index) {
+      delete(index) {
         advantages.value.list.splice(index, 1);
       },
     };

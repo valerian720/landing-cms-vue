@@ -1,8 +1,7 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="advantages" @add-item="store.advantages.addAdvantage"
-      @update-item="({ index, item }) => store.advantages.updateAdvantage(index, item)"
-      @delete-item="store.advantages.deleteAdvantage">
+    <ArrayRedactorBlock :items="advantages" @add-item="store.advantages.add"
+      @update-item="({ index, item }) => store.advantages.update(index, item)" @delete-item="store.advantages.delete">
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
