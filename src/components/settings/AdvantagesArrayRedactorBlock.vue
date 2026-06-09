@@ -19,11 +19,11 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Заголовок</label>
-            <input type="email" class="form-control" v-model="item.title" />
+            <input type="text" class="form-control" v-model="item.title" />
           </div>
           <div class="mb-3">
             <label class="form-label">Описание</label>
-            <input type="email" class="form-control" v-model="item.description" />
+            <input type="text" class="form-control" v-model="item.description" />
           </div>
         </div>
       </template>

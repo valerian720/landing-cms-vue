@@ -20,7 +20,7 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Ссылка</label>
-            <input type="email" class="form-control" v-model="item.url" />
+            <input type="text" class="form-control" v-model="item.url" />
           </div>
         </div>
       </template>
