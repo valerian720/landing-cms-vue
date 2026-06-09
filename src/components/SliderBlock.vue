@@ -1,6 +1,6 @@
 <template>
   <div class="container my-5">
-    <div id="promoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="promoCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" :key="slides.list.length">
       <div class="carousel-indicators">
         <button type="button" v-for="(slide, index) in slides.list" :key="index" data-bs-target="#promoCarousel"
           :data-bs-slide-to="index" :class="index === 0 ? 'active' : ''" :aria-current="index === 0"

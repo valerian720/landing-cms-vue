@@ -36,10 +36,13 @@
         <SocialsArrayRedactorBlock />
         <NavigationArrayRedactorBlock />
       </div>
-      <h2>Настройки карусели
+      <h2 data-bs-target="#collapseShopSlider" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopSlider" type="button">Настройки карусели
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <p>TODO</p>
+      <div class="row p-2 border-bottom show" id="collapseShopSlider">
+        <PromoSliderArrayRedactorBlock />
+      </div>
       <h2 data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse" aria-expanded="true"
         aria-controls="collapseShopAdvantages" type="button">Настройки преимуществ
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
@@ -94,10 +97,17 @@ import { usePageStore } from '@/stores/page'
 import AdvantagesArrayRedactorBlock from '@/components/settings/AdvantagesArrayRedactorBlock.vue'
 import SocialsArrayRedactorBlock from '@/components/settings/SocialsArrayRedactorBlock.vue'
 import NavigationArrayRedactorBlock from '@/components/settings/NavigationArrayRedactorBlock.vue'
-import ReviewsArrayRedactorBlock from './settings/ReviewsArrayRedactorBlock.vue';
+import ReviewsArrayRedactorBlock from '@/components/settings/ReviewsArrayRedactorBlock.vue';
+import PromoSliderArrayRedactorBlock from '@/components/settings/PromoSliderArrayRedactorBlock.vue';
 
 export default {
-  components: { AdvantagesArrayRedactorBlock, SocialsArrayRedactorBlock, NavigationArrayRedactorBlock, ReviewsArrayRedactorBlock },
+  components: {
+    AdvantagesArrayRedactorBlock,
+    SocialsArrayRedactorBlock,
+    NavigationArrayRedactorBlock,
+    ReviewsArrayRedactorBlock,
+    PromoSliderArrayRedactorBlock
+  },
   props: {},
   data() {
     return { pageStore: usePageStore() }

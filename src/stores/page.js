@@ -90,6 +90,16 @@ export const usePageStore = defineStore("page", () => {
           actionLink: "#contact",
         },
       ],
+
+      add(newItem) {
+        promoSlider.value.list.push(newItem);
+      },
+      update(index, item) {
+        promoSlider.value.list[index] = item;
+      },
+      delete(index) {
+        promoSlider.value.list.splice(index, 1);
+      },
     };
     advantages.value = {
       list: [
