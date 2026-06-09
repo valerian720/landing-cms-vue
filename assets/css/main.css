@@ -219,3 +219,9 @@ hr {
   border-radius: 50%;
   margin: 0 6px;
 }
+
+.select-all {
+  -webkit-user-select: all;
+  user-select: all;
+  cursor: pointer;
+}
