@@ -185,6 +185,15 @@ export const usePageStore = defineStore("page", () => {
           link: "/blog/4",
         },
       ],
+      add(newItem) {
+        blogPosts.value.posts.push(newItem);
+      },
+      update(index, item) {
+        blogPosts.value.posts[index] = item;
+      },
+      delete(index) {
+        blogPosts.value.posts.splice(index, 1);
+      },
     };
     ratingThreshhold.value = 4;
     reviews.value = {
