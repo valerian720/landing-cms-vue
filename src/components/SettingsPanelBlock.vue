@@ -85,14 +85,14 @@
       <button type="button" name="save-btn" id="save-btn" class="btn btn-apple mx-1" @click="pageStore.loadDefault()">
         Сбросить
       </button>
-      <div v-if="appMode !== 'production'">
+      <div v-if="appMode == 'development'">
         <h3 data-bs-target="#collapseRawData" data-bs-toggle="collapse" aria-controls="collapseRawData" type="button"
           class="collapsed" aria-expanded="false">
           Raw data:
           <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
         </h3>
         <div class="row p-2 border-bottom collapse" id="collapseRawData">
-          <p class="select-all">{{ appMode !== 'production' ? [] : pageStore }}</p>
+          <p class="select-all">{{ appMode == 'development' ? pageStore : [] }}</p>
         </div>
       </div>
     </div>
