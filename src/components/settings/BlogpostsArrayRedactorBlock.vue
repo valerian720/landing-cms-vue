@@ -10,6 +10,7 @@
           </p>
           <p class="overflow-auto">{{ item.title }}</p>
           <p class="overflow-auto">{{ item.shortDescription }}</p>
+          <p class="overflow-auto">теги: {{ item.tags.join(', ') }}</p>
           <p class="overflow-auto">{{ item.link }}</p>
         </div>
       </template>
@@ -30,6 +31,11 @@
             <input type="text" class="form-control" v-model="item.shortDescription" />
           </div>
           <div class="mb-3">
+            <label class="form-label">tags</label>
+            <input type="text" class="form-control" id="csvInput" :value="item.tags.join(', ')"
+              @change="setItemTags($event.target.value, item)">
+          </div>
+          <div class="mb-3">
             <label class="form-label">link</label>
             <input type="text" class="form-control" v-model="item.link" />
           </div>
@@ -45,6 +51,10 @@ import { usePageStore } from '@/stores/page';
 
 export default {
   components: { ArrayRedactorBlock },
+  data() {
+    return {
+    };
+  },
   setup() {
     const store = usePageStore();
     return { store };
@@ -53,6 +63,21 @@ export default {
     blogPosts() {
       return this.store.blogPosts.posts;
     },
-  }
+  },
+  methods: {
+    setItemTags(newValue, item) {
+      console.log(newValue, item);
+
+      const parsedArray = newValue
+        .split(',')
+        .map(item => item.trim())
+        .filter(item => item.length > 0);
+      item.tags = parsedArray;
+    },
+    test(...a) {
+      console.log(a);
+    }
+
+  },
 };
 </script>
