@@ -287,6 +287,16 @@ export const usePageStore = defineStore("page", () => {
           priceSymbol: "₽/кг",
         },
       ],
+
+      add(newItem) {
+        products.value.list.push(newItem);
+      },
+      update(index, item) {
+        products.value.list[index] = item;
+      },
+      delete(index) {
+        products.value.list.splice(index, 1);
+      },
       displayAmount: 5,
     };
     navigationLinks.value = {

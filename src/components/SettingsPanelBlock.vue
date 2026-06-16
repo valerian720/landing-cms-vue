@@ -50,10 +50,13 @@
       <div class="row p-2 border-bottom show" id="collapseShopAdvantages">
         <AdvantagesArrayRedactorBlock />
       </div>
-      <h2>Настройки товаров
+      <h2 data-bs-target="#collapseShopProducts" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopProducts" type="button">Настройки товаров
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <p>TODO</p>
+      <div class="row p-2 border-bottom show" id="collapseShopProducts">
+        <ProductsArrayRedactorBlock />
+      </div>
       <h2 data-bs-target="#collapseBlogPosts" data-bs-toggle="collapse" aria-expanded="true"
         aria-controls="collapseBlogPosts" type="button">Настройки блога
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
@@ -109,7 +112,8 @@ import SocialsArrayRedactorBlock from '@/components/settings/SocialsArrayRedacto
 import NavigationArrayRedactorBlock from '@/components/settings/NavigationArrayRedactorBlock.vue'
 import ReviewsArrayRedactorBlock from '@/components/settings/ReviewsArrayRedactorBlock.vue';
 import PromoSliderArrayRedactorBlock from '@/components/settings/PromoSliderArrayRedactorBlock.vue';
-import BlogpostsArrayRedactorBlock from './settings/BlogpostsArrayRedactorBlock.vue';
+import BlogpostsArrayRedactorBlock from '@/components/settings/BlogpostsArrayRedactorBlock.vue';
+import ProductsArrayRedactorBlock from '@/components/settings/ProductsArrayRedactorBlock.vue';
 
 export default {
   components: {
@@ -119,6 +123,7 @@ export default {
     ReviewsArrayRedactorBlock,
     PromoSliderArrayRedactorBlock,
     BlogpostsArrayRedactorBlock,
+    ProductsArrayRedactorBlock,
   },
   props: {},
   data() {
