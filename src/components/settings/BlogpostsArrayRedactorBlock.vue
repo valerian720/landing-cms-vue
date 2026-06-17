@@ -19,24 +19,24 @@
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
-            <label class="form-label">img</label>
+            <label class="form-label">Изображение</label>
             <input type="text" class="form-control" v-model="item.img" />
           </div>
           <div class="mb-3">
-            <label class="form-label">title</label>
+            <label class="form-label">заголовок</label>
             <input type="text" class="form-control" v-model="item.title" />
           </div>
           <div class="mb-3">
-            <label class="form-label">shortDescription</label>
+            <label class="form-label">Короткое описание</label>
             <input type="text" class="form-control" v-model="item.shortDescription" />
           </div>
           <div class="mb-3">
-            <label class="form-label">tags</label>
+            <label class="form-label">Теги через запятую</label>
             <input type="text" class="form-control" id="csvInput" :value="item.tags.join(', ')"
               @change="setItemTags($event.target.value, item)">
           </div>
           <div class="mb-3">
-            <label class="form-label">link</label>
+            <label class="form-label">Ссылка</label>
             <input type="text" class="form-control" v-model="item.link" />
           </div>
         </div>
