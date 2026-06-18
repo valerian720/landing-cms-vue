@@ -19,7 +19,8 @@
         <div class="row">
           <div class="mb-3">
             <label class="form-label">Изображение</label>
-            <input type="text" class="form-control" v-model="item.img" />
+            <ImageFieldBlock v-model="item.img" />
+            <input type="text" class="form-control pt-1" v-model="item.img" />
           </div>
           <div class="mb-3">
             <label class="form-label">Ссылка</label>
@@ -50,9 +51,10 @@
 <script>
 import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
 import { usePageStore } from '@/stores/page';
+import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
 
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorBlock, ImageFieldBlock },
   setup() {
     const store = usePageStore();
     return { store };
