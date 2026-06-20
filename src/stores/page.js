@@ -68,7 +68,7 @@ export const usePageStore = defineStore("page", () => {
     promoSlider.value = {
       list: [
         {
-          image: "https://dummyimage.com/1280x720/fff/aaa",
+          img: "https://dummyimage.com/1280x720/fff/aaa",
           title: "Свежайшие яблоки с фермы!",
           description:
             "Прямая доставка из экологически чистых садов. Вкус детства!",
@@ -76,14 +76,14 @@ export const usePageStore = defineStore("page", () => {
           actionLink: "#products",
         },
         {
-          image: "https://dummyimage.com/1280x720/fff/aaa",
+          img: "https://dummyimage.com/1280x720/fff/aaa",
           title: "Скидка 15% на первый заказ",
           description: "Подпишись на рассылку и получи промокод на корзину.",
           actionText: "Узнать больше",
           actionLink: "#contact",
         },
         {
-          image: "https://dummyimage.com/1280x720/fff/aaa",
+          img: "https://dummyimage.com/1280x720/fff/aaa",
           title: "Скидка 20% на второй заказ",
           description: "Подпишись на рассылку и получи промокод на корзину.",
           actionText: "Узнать больше",

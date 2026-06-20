@@ -9,7 +9,7 @@
       <div class="carousel-inner rounded-4 shadow">
         <div class="carousel-item" :class="index === 0 ? 'active' : ''" v-for="(slide, index) in slides.list"
           :key="index">
-          <img :src="slide.image" class="d-block w-100" :alt="slide.title" style="height: 400px; object-fit: cover;">
+          <img :src="slide.img" class="d-block w-100" :alt="slide.title" style="height: 400px; object-fit: cover;">
           <div class="carousel-caption d-none d-md-block">
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.description }}</p>

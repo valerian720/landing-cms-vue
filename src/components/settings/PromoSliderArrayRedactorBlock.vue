@@ -5,7 +5,7 @@
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
-          <img class="w-100" :src="item.image" alt="img">
+          <img class="w-100" :src="item.img" alt="img">
           {{ item.icon }} <strong>{{ item.title }}</strong>
           <p>{{ item.description }}</p>
           <p>// {{ item.actionText }} //</p>
@@ -17,7 +17,8 @@
         <div class="row">
           <div class="mb-3">
             <label class="form-label">Изображение</label>
-            <input type="text" class="form-control" v-model="item.image" />
+            <ImageFieldBlock v-model="item.img" />
+            <input type="text" class="form-control" v-model="item.img" />
           </div>
           <div class="mb-3">
             <label class="form-label">Заголовок</label>
@@ -43,10 +44,11 @@
 
 <script>
 import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
+import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
 import { usePageStore } from '@/stores/page';
 
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorBlock, ImageFieldBlock },
   setup() {
     const store = usePageStore();
     return { store };
