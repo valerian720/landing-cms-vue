@@ -28,6 +28,11 @@
           @change="(e) => (pageStore.workHours = e.target.value)" />
       </div>
 
+      <div>
+        <p>Цвет сайта: {{ primaryColor }}</p>
+        <input type="color" class="form-control form-control-color" v-model="primaryColor" />
+      </div>
+
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
         aria-controls="collapseShopLinks" type="button">Настройки ссылок
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
@@ -129,9 +134,18 @@ export default {
   data() {
     return {
       pageStore: usePageStore(),
+      primaryColor: '#2c5e2e',
       appMode: import.meta.env.MODE,
     }
   },
+  watch: {
+    primaryColor(newColor) {
+      document.documentElement.style.setProperty('--primary-color', newColor);
+    }
+  },
+  mounted() {
+    document.documentElement.style.setProperty('--primary-color', this.primaryColor);
+  }
 }
 </script>
 <style scoped>

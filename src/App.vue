@@ -51,7 +51,8 @@ import SettingsPanelBlock from '@/components/SettingsPanelBlock.vue'
 import { usePageStore } from '@/stores/page'
 
 export default {
-  props: [],
+  props: [
+  ],
   components: {
     TopHeaderBlock,
     WideHeaderBlock,
@@ -66,7 +67,9 @@ export default {
     SettingsPanelBlock,
   },
   data() {
-    return { pageStore: usePageStore() }
+    return {
+      pageStore: usePageStore(),
+    }
   },
 }
 </script>
