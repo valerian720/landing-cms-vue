@@ -4,7 +4,7 @@
       <div class="col-lg-8">
         <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
           <div class="card-body p-4 p-md-5">
-            <h2 class="text-center mb-4 fw-bold text-success">Свяжитесь с нами</h2>
+            <h2 class="text-center mb-4 fw-bold text-primary">Свяжитесь с нами</h2>
             <p class="text-center text-muted mb-4">Остались вопросы? Напишите, и мы ответим в течение часа!</p>
 
             <!-- Уведомление об успехе/ошибке с анимацией -->

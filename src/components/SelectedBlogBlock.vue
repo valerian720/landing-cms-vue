@@ -8,8 +8,8 @@
             <div class="card blog-card h-100 border-0 shadow-sm">
               <img :src="post.img" class="card-img-top" :alt="post.title" :title="post.title">
               <div class="card-body">
-                <span class="badge bg-success mb-2 me-1" v-for="(tag, tagKey) in post.tags" :key="tagKey">{{ tag
-                }}</span>
+                <span class="badge bg-primary mb-2 me-1" v-for="(tag, tagKey) in post.tags" :key="tagKey">{{ tag
+                  }}</span>
                 <h5 class="card-title">{{ post.title }}</h5>
                 <p class="card-text">{{ post.shortDescription }}</p>
                 <a :href="post.link" class="stretched-link text-danger" :title="post.title">Читать →</a>

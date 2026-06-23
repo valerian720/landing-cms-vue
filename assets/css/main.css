@@ -12,6 +12,12 @@ body {
 :root {
   --primary-color: #2c5e2e;
 }
+.text-primary {
+  color: var(--primary-color);
+}
+.bg-primary {
+  background-color: var(--primary-color);
+}
 /* двухуровневая шапка */
 .top-bar {
   background: var(--primary-color);
@@ -84,7 +90,7 @@ body {
 }
 
 .carousel-caption {
-  background: rgba(44, 94, 46, 0.75);
+  background: color-mix(in srgb, var(--primary-color), transparent 25%);
   border-radius: 24px;
   bottom: 20px;
   left: 10%;
