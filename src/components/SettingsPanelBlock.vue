@@ -29,8 +29,10 @@
       </div>
 
       <div>
-        <p>Цвет сайта: {{ primaryColor }}</p>
+        <p>Цвет сайта: {{ primaryColor }} / {{ secondaryColor }} / {{ ternaryColor }}</p>
         <input type="color" class="form-control form-control-color" v-model="primaryColor" />
+        <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
+        <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
       </div>
 
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
@@ -135,16 +137,26 @@ export default {
     return {
       pageStore: usePageStore(),
       primaryColor: '#2c5e2e',
+      secondaryColor: '#e03a3a',
+      ternaryColor: '#fef6e6',
       appMode: import.meta.env.MODE,
     }
   },
   watch: {
     primaryColor(newColor) {
       document.documentElement.style.setProperty('--primary-color', newColor);
-    }
+    },
+    secondaryColor(newColor) {
+      document.documentElement.style.setProperty('--secondary-color', newColor);
+    },
+    ternaryColor(newColor) {
+      document.documentElement.style.setProperty('--ternary-color', newColor);
+    },
   },
   mounted() {
     document.documentElement.style.setProperty('--primary-color', this.primaryColor);
+    document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
+    document.documentElement.style.setProperty('--ternary-color', this.ternaryColor);
   }
 }
 </script>

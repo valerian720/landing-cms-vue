@@ -37,7 +37,7 @@
         </button>
         <div class="carousel-indicators position-relative mt-4">
           <button type="button" data-bs-target="#productCarousel" :data-bs-slide-to="index"
-            class="bg-danger round-selector-dots" :class="index === 0 ? 'active' : ''" style="" :title="product.name"
+            class="bg-secondary round-selector-dots" :class="index === 0 ? 'active' : ''" style="" :title="product.name"
             v-for="(product, index, productKey) in products.list" :key="productKey"></button>
         </div>
       </div>
