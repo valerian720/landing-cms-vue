@@ -74,7 +74,7 @@ body {
 }
 
 .btn-apple:hover {
-  background-color: #b52e2e;
+  background-color: color-mix(in oklab, var(--secondary-color), black 20%);
   color: white;
 }
 
