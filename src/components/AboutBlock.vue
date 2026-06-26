@@ -5,7 +5,7 @@
         <img :src="about.imgUrl" :alt="about.title" :title="about.title" class="img-fluid rounded-4 shadow">
       </div>
       <div class="col-lg-6 order-lg-1">
-        <h1 class="display-5 fw-bold text-primary">{{ about.title }}</h1>
+        <h1 class="display-5 fw-bold text-main">{{ about.title }}</h1>
         <p class="lead mt-3" v-for="(row, key) in about.text" :key="key">
           {{ row }}
         </p>

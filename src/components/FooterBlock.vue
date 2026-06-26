@@ -4,7 +4,7 @@
       <div class="row gy-4">
         <div class="col-md-4">
           <div class="d-flex align-items-center">
-            <i class="bi bi-apple fs-1 text-primary me-2"></i>
+            <i class="bi bi-apple fs-1 text-main me-2"></i>
             <h4 class="fw-bold mb-0">{{ name }}</h4>
           </div>
           <p class="mt-3 text-light-50">{{ slogan.long }}</p>

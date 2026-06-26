@@ -29,10 +29,14 @@
       </div>
 
       <div>
-        <p>Цвет сайта: {{ primaryColor }} / {{ secondaryColor }} / {{ ternaryColor }}</p>
-        <input type="color" class="form-control form-control-color" v-model="primaryColor" />
+        <p>Цвет сайта: {{ mainColor }} / {{ secondaryColor }} / {{ ternaryColor }}</p>
+        <p>{{ textColor }}</p>
+        <input type="color" class="form-control form-control-color" v-model="mainColor" />
         <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
         <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
+        <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
+        <hr>
+        <input type="color" class="form-control form-control-color" v-model="textColor" />
       </div>
 
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
@@ -136,15 +140,16 @@ export default {
   data() {
     return {
       pageStore: usePageStore(),
-      primaryColor: '#2c5e2e',
+      mainColor: '#2c5e2e',
       secondaryColor: '#e03a3a',
       ternaryColor: '#fef6e6',
+      textColor: '#f9f3e2',
       appMode: import.meta.env.MODE,
     }
   },
   watch: {
-    primaryColor(newColor) {
-      document.documentElement.style.setProperty('--primary-color', newColor);
+    mainColor(newColor) {
+      document.documentElement.style.setProperty('--main-color', newColor);
     },
     secondaryColor(newColor) {
       document.documentElement.style.setProperty('--secondary-color', newColor);
@@ -152,11 +157,15 @@ export default {
     ternaryColor(newColor) {
       document.documentElement.style.setProperty('--ternary-color', newColor);
     },
+    textColor(newColor) {
+      document.documentElement.style.setProperty('--text-color', newColor);
+    },
   },
   mounted() {
-    document.documentElement.style.setProperty('--primary-color', this.primaryColor);
+    document.documentElement.style.setProperty('--main-color', this.mainColor);
     document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
     document.documentElement.style.setProperty('--ternary-color', this.ternaryColor);
+    document.documentElement.style.setProperty('--text-color', this.textColor);
   }
 }
 </script>
