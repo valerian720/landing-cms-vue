@@ -28,6 +28,9 @@ body {
 .bg-secondary {
   background-color: var(--secondary-color) !important;
 }
+.text-color {
+  color: var(--text-color) !important;
+}
 /* двухуровневая шапка */
 .top-bar {
   background: var(--main-color);

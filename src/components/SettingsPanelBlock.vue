@@ -29,13 +29,20 @@
       </div>
 
       <div>
-        <p>Цвет сайта: {{ mainColor }} / {{ secondaryColor }} / {{ ternaryColor }}</p>
-        <p>{{ textColor }}</p>
-        <input type="color" class="form-control form-control-color" v-model="mainColor" />
-        <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
-        <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
-        <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
+        <p>Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
+          / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
+          / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span></p>
+        <p>
+          Главный <input type="color" class="form-control form-control-color" v-model="mainColor" />
+        </p>
+        <p>
+          Дополнительный <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
+        </p>
+        <p>
+          Третичный <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
+        </p>
         <hr>
+        Цвет текста
         <input type="color" class="form-control form-control-color" v-model="textColor" />
       </div>
 
