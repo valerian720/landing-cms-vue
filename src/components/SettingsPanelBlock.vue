@@ -31,7 +31,9 @@
       <div>
         <p>Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
           / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
-          / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span></p>
+          / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span>
+          / <span class="bg-footer text-color rounded p-1 m-1">{{ footerColor }}</span>
+        </p>
         <p>
           Главный <input type="color" class="form-control form-control-color" v-model="mainColor" />
         </p>
@@ -39,7 +41,11 @@
           Дополнительный <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
         </p>
         <p>
-          Третичный <input type="color" class="form-control form-control-color" v-model="ternaryColor" />
+          Задный фон избранных блоков <input type="color" class="form-control form-control-color"
+            v-model="ternaryColor" />
+        </p>
+        <p>
+          Задный фон футера <input type="color" class="form-control form-control-color" v-model="footerColor" />
         </p>
         <hr>
         Цвет текста
@@ -150,6 +156,7 @@ export default {
       mainColor: '#2c5e2e',
       secondaryColor: '#e03a3a',
       ternaryColor: '#fef6e6',
+      footerColor: '#212529',
       textColor: '#f9f3e2',
       appMode: import.meta.env.MODE,
     }
@@ -164,6 +171,9 @@ export default {
     ternaryColor(newColor) {
       document.documentElement.style.setProperty('--ternary-color', newColor);
     },
+    footerColor(newColor) {
+      document.documentElement.style.setProperty('--footer-color', newColor);
+    },
     textColor(newColor) {
       document.documentElement.style.setProperty('--text-color', newColor);
     },
@@ -172,6 +182,7 @@ export default {
     document.documentElement.style.setProperty('--main-color', this.mainColor);
     document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
     document.documentElement.style.setProperty('--ternary-color', this.ternaryColor);
+    document.documentElement.style.setProperty('--footer-color', this.footerColor);
     document.documentElement.style.setProperty('--text-color', this.textColor);
   }
 }

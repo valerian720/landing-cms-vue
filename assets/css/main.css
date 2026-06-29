@@ -13,6 +13,7 @@ body {
   --main-color: #2c5e2e;
   --secondary-color: #e03a3a;
   --ternary-color: #fef6e6;
+  --footer-color: #212529;
 
   --text-color: #f9f3e2;
 }
@@ -27,6 +28,9 @@ body {
 }
 .bg-secondary {
   background-color: var(--secondary-color) !important;
+}
+.bg-footer {
+  background-color: var(--footer-color);
 }
 .text-color {
   color: var(--text-color) !important;
