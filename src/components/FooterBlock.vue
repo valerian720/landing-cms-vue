@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-footer text-white pt-5 pb-4 mt-5">
+  <footer class="bg-footer text-footer pt-5 pb-4 mt-5">
     <div class="container">
       <div class="row gy-4">
         <div class="col-md-4">
@@ -10,7 +10,7 @@
           <p class="mt-3 text-light-50">{{ slogan.long }}</p>
           <div class="mt-3">
             <a v-for="(social, index) in socials.list" :key="index" :href="social.url" target="blank"
-              class="text-white me-3">
+              class="text-footer me-3">
               <i class="fs-5 bi" :class="'bi-' + social.type"></i>
             </a>
           </div>
@@ -18,19 +18,19 @@
         <div class="col-md-2 footer-links">
           <h5 class="fw-bold">Магазин</h5>
           <ul class="list-unstyled">
-            <li><a href="#products" class="text-white-50">Каталог</a></li>
-            <li><a href="#" class="text-white-50">Акции</a></li>
-            <li><a href="#" class="text-white-50">Оплата</a></li>
-            <li><a href="#" class="text-white-50">Доставка</a></li>
+            <li><a href="#products" class="text-footer-50">Каталог</a></li>
+            <li><a href="#" class="text-footer-50">Акции</a></li>
+            <li><a href="#" class="text-footer-50">Оплата</a></li>
+            <li><a href="#" class="text-footer-50">Доставка</a></li>
           </ul>
         </div>
         <div class="col-md-3 footer-links">
           <h5 class="fw-bold">Информация</h5>
           <ul class="list-unstyled">
-            <li><a href="#about" class="text-white-50">О компании</a></li>
-            <li><a href="#blog" class="text-white-50">Блог</a></li>
-            <li><a href="#reviews" class="text-white-50">Отзывы</a></li>
-            <li><a href="#" class="text-white-50">Контакты</a></li>
+            <li><a href="#about" class="text-footer-50">О компании</a></li>
+            <li><a href="#blog" class="text-footer-50">Блог</a></li>
+            <li><a href="#reviews" class="text-footer-50">Отзывы</a></li>
+            <li><a href="#" class="text-footer-50">Контакты</a></li>
           </ul>
         </div>
         <div class="col-md-3">

@@ -14,6 +14,7 @@ body {
   --secondary-color: #e03a3a;
   --ternary-color: #fef6e6;
   --footer-color: #212529;
+  --footer-text-color: #ffffff;
 
   --text-color: #f9f3e2;
 }
@@ -23,6 +24,14 @@ body {
 .text-secondary {
   color: var(--secondary-color) !important;
 }
+
+.text-footer {
+  color: var(--footer-text-color) !important;
+}
+.text-footer-50 {
+  color: color-mix(in srgb, var(--footer-text-color), transparent 50%) !important;
+}
+
 .bg-main {
   background-color: var(--main-color);
 }

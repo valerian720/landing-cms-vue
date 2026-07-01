@@ -36,6 +36,7 @@
         </p>
         <p>
           Главный <input type="color" class="form-control form-control-color" v-model="mainColor" />
+          Цвет текста <input type="color" class="form-control form-control-color" v-model="textColor" />
         </p>
         <p>
           Дополнительный <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
@@ -46,10 +47,8 @@
         </p>
         <p>
           Задный фон футера <input type="color" class="form-control form-control-color" v-model="footerColor" />
+          Цвет текста футера <input type="color" class="form-control form-control-color" v-model="footerTextColor" />
         </p>
-        <hr>
-        Цвет текста
-        <input type="color" class="form-control form-control-color" v-model="textColor" />
       </div>
 
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
@@ -157,6 +156,7 @@ export default {
       secondaryColor: '#e03a3a',
       ternaryColor: '#fef6e6',
       footerColor: '#212529',
+      footerTextColor: '#ffffff',
       textColor: '#f9f3e2',
       appMode: import.meta.env.MODE,
     }
@@ -174,6 +174,9 @@ export default {
     footerColor(newColor) {
       document.documentElement.style.setProperty('--footer-color', newColor);
     },
+    footerTextColor(newColor) {
+      document.documentElement.style.setProperty('--footer-text-color', newColor);
+    },
     textColor(newColor) {
       document.documentElement.style.setProperty('--text-color', newColor);
     },
@@ -183,6 +186,7 @@ export default {
     document.documentElement.style.setProperty('--secondary-color', this.secondaryColor);
     document.documentElement.style.setProperty('--ternary-color', this.ternaryColor);
     document.documentElement.style.setProperty('--footer-color', this.footerColor);
+    document.documentElement.style.setProperty('--footer-text-color', this.footerTextColor);
     document.documentElement.style.setProperty('--text-color', this.textColor);
   }
 }
