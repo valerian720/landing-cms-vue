@@ -173,11 +173,11 @@ body {
 }
 
 .testimonial-card {
-  background: #fff9ef;
+  background: color-mix(in srgb, var(--ternary-color), white 25%);
   border-radius: 24px;
   padding: 20px;
   height: 100%;
-  border: 1px solid #ffe1b3;
+  border: 1px solid color-mix(in srgb, var(--ternary-color), black 5%);
 }
 
 .blog-card {
