@@ -28,27 +28,58 @@
           @change="(e) => (pageStore.workHours = e.target.value)" />
       </div>
 
-      <div>
-        <p>Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
-          / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
-          / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span>
-          / <span class="bg-footer text-color rounded p-1 m-1">{{ footerColor }}</span>
-        </p>
-        <p>
-          Главный <input type="color" class="form-control form-control-color" v-model="mainColor" />
-          Цвет текста <input type="color" class="form-control form-control-color" v-model="textColor" />
-        </p>
-        <p>
-          Дополнительный <input type="color" class="form-control form-control-color" v-model="secondaryColor" />
-        </p>
-        <p>
-          Задный фон избранных блоков <input type="color" class="form-control form-control-color"
-            v-model="ternaryColor" />
-        </p>
-        <p>
-          Задный фон футера <input type="color" class="form-control form-control-color" v-model="footerColor" />
-          Цвет текста футера <input type="color" class="form-control form-control-color" v-model="footerTextColor" />
-        </p>
+      <div class="row">
+        <div class="col">
+          <div class="row p-1">
+            <div class="col">
+              Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
+              / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
+              / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span>
+              / <span class="bg-footer text-color rounded p-1 m-1">{{ footerColor }}</span></div>
+          </div>
+
+          <div class="row p-1">
+            <div class="col">
+              <div class="row">
+                <div class="col">Главный</div>
+                <input type="color" class="form-control form-control-color col-1" v-model="mainColor" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  Цвет текста
+                </div>
+                <input type="color" class="form-control form-control-color col-1" v-model="textColor" />
+              </div>
+            </div>
+          </div>
+          <div class="row p-1">
+            <div class="col">Дополнительный</div>
+            <input type="color" class="form-control form-control-color col-1" v-model="secondaryColor" />
+          </div>
+          <div class="row p-1">
+            <div class="col">Задный фон избранных блоков</div>
+            <input type="color" class="form-control form-control-color col-1" v-model="ternaryColor" />
+          </div>
+          <div class="row p-1">
+            <div class="col">
+              <div class="row">
+                <div class="col">
+                  Задный фон футера
+                </div>
+                <input type="color" class="form-control form-control-color col-1" v-model="footerColor" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col">Цвет текста футера </div>
+                <input type="color" class="form-control form-control-color col-1" v-model="footerTextColor" />
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
