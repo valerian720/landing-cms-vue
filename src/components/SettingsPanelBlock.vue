@@ -55,14 +55,6 @@
             </div>
           </div>
           <div class="row p-1">
-            <div class="col">Дополнительный</div>
-            <input type="color" class="form-control form-control-color col-1" v-model="secondaryColor" />
-          </div>
-          <div class="row p-1">
-            <div class="col">Задный фон избранных блоков</div>
-            <input type="color" class="form-control form-control-color col-1" v-model="ternaryColor" />
-          </div>
-          <div class="row p-1">
             <div class="col">
               <div class="row">
                 <div class="col">
@@ -77,6 +69,14 @@
                 <input type="color" class="form-control form-control-color col-1" v-model="footerTextColor" />
               </div>
             </div>
+          </div>
+          <div class="row p-1">
+            <div class="col">Дополнительный</div>
+            <input type="color" class="form-control form-control-color col-1" v-model="secondaryColor" />
+          </div>
+          <div class="row p-1">
+            <div class="col">Задный фон избранных блоков</div>
+            <input type="color" class="form-control form-control-color col-1" v-model="ternaryColor" />
           </div>
         </div>
 
