@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
     <div class="container">
       <a class="navbar-brand" :href="$route.fullPath">
-        <i class="bi bi-apple"></i> {{ name }}
+        <img class="logo" :src="logo" alt="logo"> {{ name }}
       </a>
       <ShowSettingsBtnBlock />
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
@@ -30,6 +30,7 @@ export default {
     ShowSettingsBtnBlock
   },
   props: {
+    logo: String,
     name: String,
     navigationLinks: Object,
   }

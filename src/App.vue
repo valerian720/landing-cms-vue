@@ -4,7 +4,7 @@
   <RouterView />
   <!-- ШАПКА -->
   <TopHeaderBlock :phone="pageStore.phone" :email="pageStore.email" :socials="pageStore.socials" />
-  <WideHeaderBlock :name="pageStore.name" :navigationLinks="pageStore.navigationLinks" />
+  <WideHeaderBlock :logo="pageStore.logo" :name="pageStore.name" :navigationLinks="pageStore.navigationLinks" />
 
   <!-- СЛАЙДЕР (карусель с промо текстом и картинкой) -->
   <SliderBlock :slides="pageStore.promoSlider" />
@@ -30,7 +30,7 @@
   <SettingsPanelBlock />
 
   <!-- ФУТЕР С ССЫЛКАМИ -->
-  <FooterBlock :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address"
+  <FooterBlock :logo="pageStore.logo" :phone="pageStore.phone" :email="pageStore.email" :address="pageStore.address"
     :workHours="pageStore.workHours" :name="pageStore.name" :slogan="pageStore.slogan" :socials="pageStore.socials" />
 </template>
 

@@ -27,7 +27,17 @@
         <input type="text" class="form-control" id="shopWorkHours" :value="pageStore.workHours"
           @change="(e) => (pageStore.workHours = e.target.value)" />
       </div>
-
+      <div class="row p-1">
+        <div class="col-12 p-2">
+          Логотип: <img :src="pageStore.logo" alt="logo" class="logo">
+        </div>
+        <div class="col-12">
+          <ImageFieldBlock v-model="pageStore.logo" />
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control pt-1" v-model="pageStore.logo" />
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <div class="row p-1">
@@ -161,6 +171,8 @@
 
 <script>
 import { usePageStore } from '@/stores/page'
+import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
+
 import AdvantagesArrayRedactorBlock from '@/components/settings/AdvantagesArrayRedactorBlock.vue'
 import SocialsArrayRedactorBlock from '@/components/settings/SocialsArrayRedactorBlock.vue'
 import NavigationArrayRedactorBlock from '@/components/settings/NavigationArrayRedactorBlock.vue'
@@ -171,6 +183,7 @@ import ProductsArrayRedactorBlock from '@/components/settings/ProductsArrayRedac
 
 export default {
   components: {
+    ImageFieldBlock,
     AdvantagesArrayRedactorBlock,
     SocialsArrayRedactorBlock,
     NavigationArrayRedactorBlock,
