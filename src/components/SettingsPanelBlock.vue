@@ -92,6 +92,19 @@
 
       </div>
 
+      <div class="row p-1">
+        <div class="col">
+          <div class="row">
+            Короткий слоган
+            <input type="text" class="form-control" v-model="pageStore.slogan.short" />
+          </div>
+          <div class="row">
+            Длинный слоган
+            <input type="text" class="form-control" v-model="pageStore.slogan.long" />
+          </div>
+        </div>
+      </div>
+
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
         aria-controls="collapseShopLinks" type="button">Настройки ссылок
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
