@@ -1,26 +1,20 @@
 <template>
   <section id="about" class="container my-5">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6 order-lg-2">
-        <img :src="about.imgUrl" :alt="about.title" :title="about.title" class="img-fluid rounded-4 shadow">
-      </div>
-      <div class="col-lg-6 order-lg-1">
-        <h1 class="display-5 fw-bold text-main">{{ about.title }}</h1>
-        <p class="lead mt-3" v-for="(row, key) in about.text" :key="key">
-          {{ row }}
-        </p>
-        <a :href="about.actionLink" class="btn btn-apple mt-2">{{ about.actionText }}</a>
-      </div>
-    </div>
+    <component :is="currentAboutComponent.block" :about="about" />
   </section>
 </template>
 
 
 <script>
+import { aboutComponents } from '@/components/about';
 export default {
-
   props: {
-    about: Object
-  }
+    about: Object,
+  },
+  computed: {
+    currentAboutComponent() {
+      return aboutComponents[this.about.selectedType] || aboutComponents.default
+    }
+  },
 }
 </script>

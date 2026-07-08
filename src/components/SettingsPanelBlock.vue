@@ -105,6 +105,15 @@
         </div>
       </div>
 
+
+      <div class="row p-1">
+        <div class="col">
+          <h2>Описание на главной</h2>
+          <SelectAboutTypeBlock />
+        </div>
+      </div>
+
+
       <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
         aria-controls="collapseShopLinks" type="button">Настройки ссылок
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
@@ -194,6 +203,9 @@ import PromoSliderArrayRedactorBlock from '@/components/settings/PromoSliderArra
 import BlogpostsArrayRedactorBlock from '@/components/settings/BlogpostsArrayRedactorBlock.vue';
 import ProductsArrayRedactorBlock from '@/components/settings/ProductsArrayRedactorBlock.vue';
 
+import SelectAboutTypeBlock from '@/components/settings/selectors/SelectAboutTypeBlock.vue';
+
+
 export default {
   components: {
     ImageFieldBlock,
@@ -204,6 +216,7 @@ export default {
     PromoSliderArrayRedactorBlock,
     BlogpostsArrayRedactorBlock,
     ProductsArrayRedactorBlock,
+    SelectAboutTypeBlock,
   },
   props: {},
   data() {
