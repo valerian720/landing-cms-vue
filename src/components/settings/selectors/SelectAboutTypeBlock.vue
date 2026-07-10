@@ -2,7 +2,7 @@
   <div>
     <div class="mb-3">
       <label for="" class="form-label">Тип</label>
-      <select v-model="selectedType" class="form-control">
+      <select v-model="selectedType" class="form-select">
         <option :value="val" v-for="(name, val) in types" :key="val">{{ name }}</option>
       </select>
     </div>

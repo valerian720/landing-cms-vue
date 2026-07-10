@@ -110,6 +110,48 @@
         <div class="col">
           <h2>Описание на главной</h2>
           <SelectAboutTypeBlock />
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="" class="form-label">Заголовок</label>
+                <input type="text" class="form-control" v-model="pageStore.about.title" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="" class="form-label">Текст</label>
+                <textarea rows="5" class="form-control" :value="pageStore.about.text.join('\n\n')"
+                  @change="(e) => { pageStore.about.text = e.target.value.split('\n\n') }"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="" class="form-label">Изображение</label>
+                <ImageFieldBlock v-model="pageStore.about.imgUrl" class="pb-1" />
+                <input type="text" class="form-control" v-model="pageStore.about.imgUrl" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="" class="form-label">Текст ссылки</label>
+                <input type="text" class="form-control" v-model="pageStore.about.actionText" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="" class="form-label">Ссылка</label>
+                <input type="text" class="form-control" v-model="pageStore.about.actionLink" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
