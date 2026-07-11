@@ -122,7 +122,7 @@
             <div class="col">
               <div class="mb-3">
                 <label for="" class="form-label">Текст</label>
-                <textarea rows="5" class="form-control" :value="pageStore.about.text.join('\n\n')"
+                <textarea rows="20" class="form-control" :value="pageStore.about.text.join('\n\n')"
                   @change="(e) => { pageStore.about.text = e.target.value.split('\n\n') }"></textarea>
               </div>
             </div>
