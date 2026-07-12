@@ -1,45 +1,79 @@
-import { ref, computed } from "vue";
+import { ref, reactive } from "vue";
 import { defineStore } from "pinia";
 
 export const usePageStore = defineStore("page", () => {
-  const name = ref("");
-  const phone = ref("");
-  const address = ref("");
-  const workHours = ref("");
-  const email = ref("");
+  const state = reactive({
+    name: "",
+    phone: "",
+    address: "",
+    workHours: "",
+    email: "",
+    logo: "",
+    slogan: { short: "", long: "" },
+    socials: [],
+    promoSlider: [],
+    advantages: [],
+    about: {
+      selectedType: "default",
+      title: "",
+      text: [],
+      imgUrl: "",
+      actionText: "",
+      actionLink: "",
+    },
+    blogPosts: { displayLimit: 3, posts: [] },
+    ratingThreshold: 0,
+    reviews: [],
+    products: { displayAmount: 5, list: [] },
+    navigationLinks: { displayDepthLevel: 1, list: [] },
+  });
 
-  const logo = ref("");
+  function addItem(section, newItem) {
+    if (Array.isArray(state[section])) {
+      state[section].push(newItem);
+    } else if (state[section]?.list && Array.isArray(state[section].list)) {
+      state[section].list.push(newItem);
+    } else {
+      console.warn(`Section "${section}" does not support addItem`);
+    }
+  }
 
-  const slogan = ref({});
+  function updateItem(section, index, newItem) {
+    const target = getTargetArray(section);
+    if (target && index >= 0 && index < target.length) {
+      target[index] = newItem;
+    }
+  }
 
-  const socials = ref({});
-  const promoSlider = ref({});
-  const advantages = ref({});
-  const about = ref({});
-  const blogPosts = ref({});
+  function deleteItem(section, index) {
+    const target = getTargetArray(section);
+    if (target && index >= 0 && index < target.length) {
+      target.splice(index, 1);
+    }
+  }
 
-  const ratingThreshhold = ref(0);
-  const reviews = ref({});
-
-  const products = ref({});
-
-  const navigationLinks = ref({});
+  function getTargetArray(section) {
+    const val = state[section];
+    if (Array.isArray(val)) return val;
+    if (val?.list && Array.isArray(val.list)) return val.list;
+    return null;
+  }
 
   // ---
   function loadDefault() {
-    name.value = "AppleFresh";
-    logo.value =
+    state.name = "AppleFresh";
+    state.logo =
       "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktYXBwbGUiIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPHBhdGggZD0iTTExLjE4Mi4wMDhDMTEuMTQ4LS4wMyA5LjkyMy4wMjMgOC44NTcgMS4xOGMtMS4wNjYgMS4xNTYtLjkwMiAyLjQ4Mi0uODc4IDIuNTE2czEuNTIuMDg3IDIuNDc1LTEuMjU4Ljc2Mi0yLjM5MS43MjgtMi40M20zLjMxNCAxMS43MzNjLS4wNDgtLjA5Ni0yLjMyNS0xLjIzNC0yLjExMy0zLjQyMnMxLjY3NS0yLjc4OSAxLjY5OC0yLjg1NC0uNTk3LS43OS0xLjI1NC0xLjE1N2EzLjcgMy43IDAgMCAwLTEuNTYzLS40MzRjLS4xMDgtLjAwMy0uNDgzLS4wOTUtMS4yNTQuMTE2LS41MDguMTM5LTEuNjUzLjU4OS0xLjk2OC42MDctLjMxNi4wMTgtMS4yNTYtLjUyMi0yLjI2Ny0uNjY1LS42NDctLjEyNS0xLjMzMy4xMzEtMS44MjQuMzI4LS40OS4xOTYtMS40MjIuNzU0LTIuMDc0IDIuMjM3LS42NTIgMS40ODItLjMxMSAzLjgzLS4wNjcgNC41NnMuNjI1IDEuOTI0IDEuMjczIDIuNzk2Yy41NzYuOTg0IDEuMzQgMS42NjcgMS42NTkgMS44OTlzMS4yMTkuMzg2IDEuODQzLjA2N2MuNTAyLS4zMDggMS40MDgtLjQ4NSAxLjc2Ni0uNDcyLjM1Ny4wMTMgMS4wNjEuMTU0IDEuNzgyLjUzOS41NzEuMTk3IDEuMTExLjExNSAxLjY1Mi0uMTA1LjU0MS0uMjIxIDEuMzI0LTEuMDU5IDIuMjM4LTIuNzU4cS41Mi0xLjE4NS40NzMtMS4yODIiLz4KICA8cGF0aCBkPSJNMTEuMTgyLjAwOEMxMS4xNDgtLjAzIDkuOTIzLjAyMyA4Ljg1NyAxLjE4Yy0xLjA2NiAxLjE1Ni0uOTAyIDIuNDgyLS44NzggMi41MTZzMS41Mi4wODcgMi40NzUtMS4yNTguNzYyLTIuMzkxLjcyOC0yLjQzbTMuMzE0IDExLjczM2MtLjA0OC0uMDk2LTIuMzI1LTEuMjM0LTIuMTEzLTMuNDIyczEuNjc1LTIuNzg5IDEuNjk4LTIuODU0LS41OTctLjc5LTEuMjU0LTEuMTU3YTMuNyAzLjcgMCAwIDAtMS41NjMtLjQzNGMtLjEwOC0uMDAzLS40ODMtLjA5NS0xLjI1NC4xMTYtLjUwOC4xMzktMS42NTMuNTg5LTEuOTY4LjYwNy0uMzE2LjAxOC0xLjI1Ni0uNTIyLTIuMjY3LS42NjUtLjY0Ny0uMTI1LTEuMzMzLjEzMS0xLjgyNC4zMjgtLjQ5LjE5Ni0xLjQyMi43NTQtMi4wNzQgMi4yMzctLjY1MiAxLjQ4Mi0uMzExIDMuODMtLjA2NyA0LjU2cy42MjUgMS45MjQgMS4yNzMgMi43OTZjLjU3Ni45ODQgMS4zNCAxLjY2NyAxLjY1OSAxLjg5OXMxLjIxOS4zODYgMS44NDMuMDY3Yy41MDItLjMwOCAxLjQwOC0uNDg1IDEuNzY2LS40NzIuMzU3LjAxMyAxLjA2MS4xNTQgMS43ODIuNTM5LjU3MS4xOTcgMS4xMTEuMTE1IDEuNjUyLS4xMDUuNTQxLS4yMjEgMS4zMjQtMS4wNTkgMi4yMzgtMi43NThxLjUyLTEuMTg1LjQ3My0xLjI4MiIvPgo8L3N2Zz4=";
-    slogan.value = {
+    state.slogan = {
       short: "AppleFresh — Магазин фермерских яблок.",
       long:
         "Свежие яблоки высшего качества с доставкой по всей России. Натуральные фермерские продукты для вашей семьи.",
     };
-    phone.value = "+7 (495) 123-45-67";
-    address.value = "г. Москва, ул. Яблоневая, 12";
-    workHours.value = "Ежедневно: 9:00 - 21:00";
-    email.value = "hello@applefresh.ru";
-    socials.value = {
+    state.phone = "+7 (495) 123-45-67";
+    state.address = "г. Москва, ул. Яблоневая, 12";
+    state.workHours = "Ежедневно: 9:00 - 21:00";
+    state.email = "hello@applefresh.ru";
+    state.socials = {
       list: [
         {
           type: "facebook",
@@ -60,16 +94,16 @@ export const usePageStore = defineStore("page", () => {
       ],
 
       add(newItem) {
-        socials.value.list.push(newItem);
+        state.socials.list.push(newItem);
       },
       update(index, item) {
-        socials.value.list[index] = item;
+        state.socials.list[index] = item;
       },
       delete(index) {
-        socials.value.list.splice(index, 1);
+        state.socials.list.splice(index, 1);
       },
     };
-    promoSlider.value = {
+    state.promoSlider = {
       list: [
         {
           img: "https://dummyimage.com/1280x720/fff/aaa",
@@ -96,16 +130,16 @@ export const usePageStore = defineStore("page", () => {
       ],
 
       add(newItem) {
-        promoSlider.value.list.push(newItem);
+        state.promoSlider.list.push(newItem);
       },
       update(index, item) {
-        promoSlider.value.list[index] = item;
+        state.promoSlider.list[index] = item;
       },
       delete(index) {
-        promoSlider.value.list.splice(index, 1);
+        state.promoSlider.list.splice(index, 1);
       },
     };
-    advantages.value = {
+    state.advantages = {
       list: [
         {
           icon: "🍎",
@@ -134,16 +168,16 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       add(element) {
-        advantages.value.list.push(element);
+        state.advantages.list.push(element);
       },
       update(index, element) {
-        advantages.value.list[index] = element;
+        state.advantages.list[index] = element;
       },
       delete(index) {
-        advantages.value.list.splice(index, 1);
+        state.advantages.list.splice(index, 1);
       },
     };
-    about.value = {
+    state.about = {
       selectedType: "default",
       title: "AppleFresh — яблоки, влюбляющие с первого укуса",
       text: [
@@ -154,7 +188,7 @@ export const usePageStore = defineStore("page", () => {
       actionText: "Каталог сортов",
       actionLink: "#products",
     };
-    blogPosts.value = {
+    state.blogPosts = {
       displayLimit: 3,
       posts: [
         {
@@ -191,17 +225,17 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       add(newItem) {
-        blogPosts.value.posts.push(newItem);
+        state.blogPosts.posts.push(newItem);
       },
       update(index, item) {
-        blogPosts.value.posts[index] = item;
+        state.blogPosts.posts[index] = item;
       },
       delete(index) {
-        blogPosts.value.posts.splice(index, 1);
+        state.blogPosts.posts.splice(index, 1);
       },
     };
-    ratingThreshhold.value = 4;
-    reviews.value = {
+    state.ratingThreshhold = 4;
+    state.reviews = {
       list: [
         {
           rating: 5.0,
@@ -246,17 +280,17 @@ export const usePageStore = defineStore("page", () => {
       ],
 
       add(newItem) {
-        reviews.value.list.push(newItem);
+        state.reviews.list.push(newItem);
       },
       update(index, item) {
-        reviews.value.list[index] = item;
+        state.reviews.list[index] = item;
       },
       delete(index) {
-        reviews.value.list.splice(index, 1);
+        state.reviews.list.splice(index, 1);
       },
     };
 
-    products.value = {
+    state.products = {
       list: [
         {
           img: "https://dummyimage.com/1280x720/fff/aaa",
@@ -294,17 +328,17 @@ export const usePageStore = defineStore("page", () => {
       ],
 
       add(newItem) {
-        products.value.list.push(newItem);
+        state.products.list.push(newItem);
       },
       update(index, item) {
-        products.value.list[index] = item;
+        state.products.list[index] = item;
       },
       delete(index) {
-        products.value.list.splice(index, 1);
+        state.products.list.splice(index, 1);
       },
       displayAmount: 5,
     };
-    navigationLinks.value = {
+    state.navigationLinks = {
       list: [
         {
           title: "Преимущества",
@@ -334,13 +368,13 @@ export const usePageStore = defineStore("page", () => {
       displayDepthLevel: 1,
 
       add(newItem) {
-        navigationLinks.value.list.push(newItem);
+        state.navigationLinks.list.push(newItem);
       },
       update(index, item) {
-        navigationLinks.value.list[index] = item;
+        state.navigationLinks.list[index] = item;
       },
       delete(index) {
-        navigationLinks.value.list.splice(index, 1);
+        state.navigationLinks.list.splice(index, 1);
       },
     };
   }
@@ -350,26 +384,14 @@ export const usePageStore = defineStore("page", () => {
     let number = newNumber;
     number = Math.min(number, max);
     number = Math.max(number, min);
-    ratingThreshhold.value = number;
+    state.ratingThreshhold = number;
   }
 
   return {
-    name,
-    logo,
-    slogan,
-    address,
-    workHours,
-    phone,
-    email,
-    socials,
-    promoSlider,
-    advantages,
-    about,
-    blogPosts,
-    ratingThreshhold,
-    reviews,
-    products,
-    navigationLinks,
+    ...state, //get access to states individually
+    addItem,
+    updateItem,
+    deleteItem,
     loadDefault,
     setRatingThreshhold,
   };
