@@ -22,7 +22,7 @@
   <SelectedBlogBlock :posts="pageStore.blogPosts" />
 
   <!-- ПОСЛЕДНИЕ ОТЗЫВЫ -->
-  <SelectedReviewsBlock :reviews="pageStore.reviews" :ratingThreshhold="pageStore.ratingThreshhold" />
+  <SelectedReviewsBlock :reviews="pageStore.reviews" :ratingThreshhold="pageStore.ratingThreshhold.value" />
 
   <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
   <ContactFormBlock />

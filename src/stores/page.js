@@ -22,7 +22,7 @@ export const usePageStore = defineStore("page", () => {
       actionLink: "",
     },
     blogPosts: { displayLimit: 3, posts: [] },
-    ratingThreshold: 0,
+    ratingThreshhold: { value: 0 },
     reviews: [],
     products: { displayAmount: 5, list: [] },
     navigationLinks: { displayDepthLevel: 1, list: [] },
@@ -234,7 +234,7 @@ export const usePageStore = defineStore("page", () => {
         state.blogPosts.posts.splice(index, 1);
       },
     };
-    state.ratingThreshhold = 4;
+    state.ratingThreshhold.value = 4;
     state.reviews = {
       list: [
         {
@@ -384,7 +384,9 @@ export const usePageStore = defineStore("page", () => {
     let number = newNumber;
     number = Math.min(number, max);
     number = Math.max(number, min);
-    state.ratingThreshhold = number;
+    console.log(number);
+
+    state.ratingThreshhold.value = number;
   }
 
   return {

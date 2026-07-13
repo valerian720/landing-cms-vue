@@ -202,7 +202,7 @@
         <div class="m-3">
           <h3>Минимальный рейтинг отзыва</h3>
           <input type="range" class="form-range" min="1" max="5" id="ratingThreshhold"
-            :value="pageStore.ratingThreshhold" @change="
+            :value="pageStore.ratingThreshhold.value" @change="
               (e) => {
                 pageStore.setRatingThreshhold(e.target.value)
               }
