@@ -167,15 +167,6 @@ export const usePageStore = defineStore("page", () => {
           description: "Никаких наценок посредников",
         },
       ],
-      add(element) {
-        state.advantages.list.push(element);
-      },
-      update(index, element) {
-        state.advantages.list[index] = element;
-      },
-      delete(index) {
-        state.advantages.list.splice(index, 1);
-      },
     };
     state.about = {
       selectedType: "default",
@@ -384,7 +375,6 @@ export const usePageStore = defineStore("page", () => {
     let number = newNumber;
     number = Math.min(number, max);
     number = Math.max(number, min);
-    console.log(number);
 
     state.ratingThreshhold.value = number;
   }

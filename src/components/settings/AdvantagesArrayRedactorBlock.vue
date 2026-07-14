@@ -1,7 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="advantages" @add-item="store.advantages.add"
-      @update-item="({ index, item }) => store.advantages.update(index, item)" @delete-item="store.advantages.delete">
+    <ArrayRedactorWrapper :section-name="sectionName">
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
@@ -27,24 +26,17 @@
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
-import { usePageStore } from '@/stores/page';
-
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorWrapper },
   setup() {
-    const store = usePageStore();
-    return { store };
-  },
-  computed: {
-    advantages() {
-      return this.store.advantages.list;
-    }
+    const sectionName = 'advantages';
+    return { sectionName };
   }
 };
 </script>
