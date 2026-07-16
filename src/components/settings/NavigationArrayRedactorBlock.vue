@@ -1,9 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="navigationLinks" @add-item="store.navigationLinks.add"
-      @update-item="({ index, item }) => store.navigationLinks.update(index, item)"
-      @delete-item="store.navigationLinks.delete">
-      <!-- Слот для отображения одного элемента в списке -->
+    <ArrayRedactorWrapper :section-name="sectionName">
       <template #item-display="{ item }">
         <div class="col">
           {{ item.title }}
@@ -11,7 +8,6 @@
         </div>
       </template>
 
-      <!-- Слот для формы редактирования -->
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
@@ -24,24 +20,18 @@
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
-import { usePageStore } from '@/stores/page';
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
 
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorWrapper },
   setup() {
-    const store = usePageStore();
-    return { store };
+    const sectionName = 'socials';
+    return { sectionName };
   },
-  computed: {
-    navigationLinks() {
-      return this.store.navigationLinks.list;
-    },
-  }
 };
 </script>
