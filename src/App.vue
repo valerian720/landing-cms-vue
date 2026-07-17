@@ -19,7 +19,7 @@
   <AboutBlock :about="pageStore.about" />
 
   <!-- ИЗБРАННЫЕ ЗАПИСИ БЛОГА -->
-  <SelectedBlogBlock :posts="pageStore.blogPosts" />
+  <SelectedBlogBlock :posts="pageStore.blog" />
 
   <!-- ПОСЛЕДНИЕ ОТЗЫВЫ -->
   <SelectedReviewsBlock :reviews="pageStore.reviews" :ratingThreshhold="pageStore.ratingThreshhold.value" />

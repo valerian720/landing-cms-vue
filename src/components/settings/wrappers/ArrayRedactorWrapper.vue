@@ -1,13 +1,15 @@
 <template>
-  <ArrayRedactorBlock :items="items" :store="store" :section-name="sectionName" :create-empty-item="createEmptyItem"
-    @add-item="addItem" @update-item="updateItem" @delete-item="deleteItem">
-    <template #item-display="{ item }">
-      <slot name="item-display" :item="item" />
-    </template>
-    <template #edit-form="{ item }">
-      <slot name="edit-form" :item="item" />
-    </template>
-  </ArrayRedactorBlock>
+  <div>
+    <ArrayRedactorBlock :items="items" :store="store" :section-name="sectionName" :create-empty-item="createEmptyItem"
+      @add-item="addItem" @update-item="updateItem" @delete-item="deleteItem">
+      <template #item-display="{ item }">
+        <slot name="item-display" :item="item" />
+      </template>
+      <template #edit-form="{ item }">
+        <slot name="edit-form" :item="item" />
+      </template>
+    </ArrayRedactorBlock>
+  </div>
 </template>
 
 <script>

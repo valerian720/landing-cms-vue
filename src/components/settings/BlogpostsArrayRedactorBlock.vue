@@ -1,8 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="blogPosts" @add-item="store.blogPosts.add"
-      @update-item="({ index, item }) => store.blogPosts.update(index, item)" @delete-item="store.blogPosts.delete">
-      <!-- Слот для отображения одного элемента в списке -->
+    <ArrayRedactorWrapper key="" :section-name="sectionName">
       <template #item-display="{ item }">
         <div class="col">
           <p class="overflow-auto">
@@ -15,7 +13,6 @@
         </div>
       </template>
 
-      <!-- Слот для формы редактирования -->
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
@@ -42,35 +39,26 @@
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
 import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
 
-import { usePageStore } from '@/stores/page';
-
 export default {
-  components: { ArrayRedactorBlock, ImageFieldBlock },
+  components: { ArrayRedactorWrapper, ImageFieldBlock },
   data() {
     return {
     };
   },
   setup() {
-    const store = usePageStore();
-    return { store };
-  },
-  computed: {
-    blogPosts() {
-      return this.store.blogPosts.posts;
-    },
+    const sectionName = 'blog';
+    return { sectionName };
   },
   methods: {
     setItemTags(newValue, item) {
-      console.log(newValue, item);
-
       const parsedArray = newValue
         .split(',')
         .map(item => item.trim())

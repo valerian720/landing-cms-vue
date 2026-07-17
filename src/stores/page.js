@@ -21,7 +21,7 @@ export const usePageStore = defineStore("page", () => {
       actionText: "",
       actionLink: "",
     },
-    blogPosts: { displayLimit: 3, posts: [] },
+    blog: { displayLimit: 3, list: [] },
     ratingThreshhold: { value: 0 },
     reviews: [],
     products: { displayAmount: 5, list: [] },
@@ -179,9 +179,9 @@ export const usePageStore = defineStore("page", () => {
       actionText: "Каталог сортов",
       actionLink: "#products",
     };
-    state.blogPosts = {
+    state.blog = {
       displayLimit: 3,
-      posts: [
+      list: [
         {
           img: "https://dummyimage.com/1280x720/fff/aaa",
           tags: ["Рецепты"],
@@ -216,13 +216,13 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       add(newItem) {
-        state.blogPosts.posts.push(newItem);
+        state.blog.list.push(newItem);
       },
       update(index, item) {
-        state.blogPosts.posts[index] = item;
+        state.blog.list[index] = item;
       },
       delete(index) {
-        state.blogPosts.posts.splice(index, 1);
+        state.blog.list.splice(index, 1);
       },
     };
     state.ratingThreshhold.value = 4;

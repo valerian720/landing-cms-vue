@@ -3,7 +3,7 @@
     <div class="container">
       <h2 class="section-title text-center w-100">Блог</h2>
       <div class="row g-4 mt-2">
-        <template v-for="(post, index, key) in posts.posts" :key="key">
+        <template v-for="(post, index, key) in posts.list" :key="key">
           <div class="col-md-6 col-lg-4" v-if="index < posts.displayLimit">
             <div class="card blog-card h-100 border-0 shadow-sm">
               <img :src="post.img" class="card-img-top" :alt="post.title" :title="post.title">
