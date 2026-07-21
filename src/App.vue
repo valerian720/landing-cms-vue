@@ -7,7 +7,7 @@
   <WideHeaderBlock :logo="pageStore.logo" :name="pageStore.name" :navigationLinks="pageStore.navigationLinks" />
 
   <!-- СЛАЙДЕР (карусель с промо текстом и картинкой) -->
-  <SliderBlock :slides="pageStore.promoSlider" />
+  <SliderBlock :slides="pageStore.slider" />
 
   <!-- БЛОК С ПРЕИМУЩЕСТВАМИ (эмодзи + текст) -->
   <AdvantagesBlock :advantages="pageStore.advantages" />

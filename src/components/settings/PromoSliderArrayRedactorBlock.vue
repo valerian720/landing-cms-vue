@@ -1,8 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="promoSlider" @add-item="store.promoSlider.add"
-      @update-item="({ index, item }) => store.promoSlider.update(index, item)" @delete-item="store.promoSlider.delete">
-      <!-- Слот для отображения одного элемента в списке -->
+    <ArrayRedactorWrapper :section-name="sectionName">
       <template #item-display="{ item }">
         <div class="col">
           <img class="w-100" :src="item.img" alt="img">
@@ -12,7 +10,6 @@
         </div>
       </template>
 
-      <!-- Слот для формы редактирования -->
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
@@ -38,25 +35,20 @@
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
 import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
-import { usePageStore } from '@/stores/page';
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
+
 
 export default {
-  components: { ArrayRedactorBlock, ImageFieldBlock },
+  components: { ArrayRedactorWrapper, ImageFieldBlock },
   setup() {
-    const store = usePageStore();
-    return { store };
+    const sectionName = 'slider';
+    return { sectionName };
   },
-  computed: {
-    promoSlider() {
-      return this.store.promoSlider.list;
-    }
-  }
 };
 </script>

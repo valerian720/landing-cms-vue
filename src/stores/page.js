@@ -11,7 +11,7 @@ export const usePageStore = defineStore("page", () => {
     logo: "",
     slogan: { short: "", long: "" },
     socials: [],
-    promoSlider: [],
+    slider: [],
     advantages: [],
     about: {
       selectedType: "default",
@@ -103,7 +103,7 @@ export const usePageStore = defineStore("page", () => {
         state.socials.list.splice(index, 1);
       },
     };
-    state.promoSlider = {
+    state.slider = {
       list: [
         {
           img: "https://dummyimage.com/1280x720/fff/aaa",
@@ -130,13 +130,13 @@ export const usePageStore = defineStore("page", () => {
       ],
 
       add(newItem) {
-        state.promoSlider.list.push(newItem);
+        state.slider.list.push(newItem);
       },
       update(index, item) {
-        state.promoSlider.list[index] = item;
+        state.slider.list[index] = item;
       },
       delete(index) {
-        state.promoSlider.list.splice(index, 1);
+        state.slider.list.splice(index, 1);
       },
     };
     state.advantages = {
