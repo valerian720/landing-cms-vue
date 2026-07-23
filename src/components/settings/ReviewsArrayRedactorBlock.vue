@@ -1,7 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="reviews" @add-item="store.reviews.add"
-      @update-item="({ index, item }) => store.reviews.update(index, item)" @delete-item="store.reviews.delete">
+    <ArrayRedactorWrapper :section-name="sectionName">
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
         <div class="col">
@@ -40,28 +39,24 @@
           </div>
           <div class="mb-3">
             <label class="form-label">Аватар</label>
+            <ImageFieldBlock v-model="item.author.avatar" />
             <input type="text" class="form-control" v-model="item.author.avatar" />
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
-import { usePageStore } from '@/stores/page';
+import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
 
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorWrapper, ImageFieldBlock },
   setup() {
-    const store = usePageStore();
-    return { store };
+    const sectionName = 'reviews';
+    return { sectionName };
   },
-  computed: {
-    reviews() {
-      return this.store.reviews.list;
-    },
-  }
 };
 </script>
