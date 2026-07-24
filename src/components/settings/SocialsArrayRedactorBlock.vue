@@ -1,8 +1,6 @@
 <template>
   <div>
-    <ArrayRedactorBlock :items="socials" @add-item="store.socials.add"
-      @update-item="({ index, item }) => store.socials.update(index, item)" @delete-item="store.socials.delete">
-      <!-- Слот для отображения одного элемента в списке -->
+    <ArrayRedactorWrapper :section-name="sectionName">
       <template #item-display="{ item }">
         <div class="col">
           {{ item.type }}
@@ -10,7 +8,6 @@
         </div>
       </template>
 
-      <!-- Слот для формы редактирования -->
       <template #edit-form="{ item }">
         <div class="row">
           <div class="mb-3">
@@ -27,24 +24,21 @@
           </div>
         </div>
       </template>
-    </ArrayRedactorBlock>
+    </ArrayRedactorWrapper>
   </div>
 </template>
 
 <script>
-import ArrayRedactorBlock from '@/components/settings/T/TArrayRedactorBlock.vue';
-import { usePageStore } from '@/stores/page';
+import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
+
 
 export default {
-  components: { ArrayRedactorBlock },
+  components: { ArrayRedactorWrapper },
   setup() {
-    const store = usePageStore();
-    return { store };
+    const sectionName = 'socials';
+    return { sectionName };
   },
   computed: {
-    socials() {
-      return this.store.socials.list;
-    },
     suggestedSocialNetworks() {
       return ['facebook', 'instagram', 'telegram', 'whatsapp'];
     }
