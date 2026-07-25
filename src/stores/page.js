@@ -92,16 +92,6 @@ export const usePageStore = defineStore("page", () => {
           url: "//wa.me/AppleFresh/",
         },
       ],
-
-      add(newItem) {
-        state.socials.list.push(newItem);
-      },
-      update(index, item) {
-        state.socials.list[index] = item;
-      },
-      delete(index) {
-        state.socials.list.splice(index, 1);
-      },
     };
     state.slider = {
       list: [
@@ -128,16 +118,6 @@ export const usePageStore = defineStore("page", () => {
           actionLink: "#contact",
         },
       ],
-
-      add(newItem) {
-        state.slider.list.push(newItem);
-      },
-      update(index, item) {
-        state.slider.list[index] = item;
-      },
-      delete(index) {
-        state.slider.list.splice(index, 1);
-      },
     };
     state.advantages = {
       list: [
@@ -215,15 +195,6 @@ export const usePageStore = defineStore("page", () => {
           link: "/blog/4",
         },
       ],
-      add(newItem) {
-        state.blog.list.push(newItem);
-      },
-      update(index, item) {
-        state.blog.list[index] = item;
-      },
-      delete(index) {
-        state.blog.list.splice(index, 1);
-      },
     };
     state.ratingThreshhold.value = 4;
     state.reviews = {
@@ -269,16 +240,6 @@ export const usePageStore = defineStore("page", () => {
           },
         },
       ],
-
-      add(newItem) {
-        state.reviews.list.push(newItem);
-      },
-      update(index, item) {
-        state.reviews.list[index] = item;
-      },
-      delete(index) {
-        state.reviews.list.splice(index, 1);
-      },
     };
 
     state.products = {
@@ -317,16 +278,6 @@ export const usePageStore = defineStore("page", () => {
           priceSymbol: "₽/кг",
         },
       ],
-
-      add(newItem) {
-        state.products.list.push(newItem);
-      },
-      update(index, item) {
-        state.products.list[index] = item;
-      },
-      delete(index) {
-        state.products.list.splice(index, 1);
-      },
       displayAmount: 5,
     };
     state.navigationLinks = {
@@ -357,16 +308,6 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       displayDepthLevel: 1,
-
-      add(newItem) {
-        state.navigationLinks.list.push(newItem);
-      },
-      update(index, item) {
-        state.navigationLinks.list[index] = item;
-      },
-      delete(index) {
-        state.navigationLinks.list.splice(index, 1);
-      },
     };
   }
   loadDefault();
