@@ -26,89 +26,94 @@
         <h4>Часы работы</h4>
         <input type="text" class="form-control" id="shopWorkHours" :value="pageStore.workHours"
           @change="(e) => (pageStore.workHours = e.target.value)" />
-      </div>
-      <div class="row p-1">
-        <div class="col-12 p-2">
-          Логотип: <img :src="pageStore.logo" alt="logo" class="logo">
-        </div>
-        <div class="col-12">
-          <ImageFieldBlock v-model="pageStore.logo" />
-        </div>
-        <div class="col-12">
-          <input type="text" class="form-control pt-1" v-model="pageStore.logo" />
-        </div>
-      </div>
-      <div class="row">
         <div class="col">
-          <div class="row p-1">
-            <div class="col">
-              Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
-              / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
-              / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span>
-              / <span class="bg-footer text-color rounded p-1 m-1">{{ footerColor }}</span></div>
-          </div>
 
           <div class="row p-1">
-            <div class="col">
-              <div class="row">
-                <div class="col">Главный</div>
-                <input type="color" class="form-control form-control-color col-1" v-model="mainColor" />
-              </div>
+            <div class="col-12 p-2">
+              Логотип: <img :src="pageStore.logo" alt="logo" class="logo">
             </div>
-            <div class="col">
-              <div class="row">
-                <div class="col">
-                  Цвет текста
-                </div>
-                <input type="color" class="form-control form-control-color col-1" v-model="textColor" />
-              </div>
+            <div class="col-12">
+              <ImageFieldBlock v-model="pageStore.logo" />
             </div>
-          </div>
-          <div class="row p-1">
-            <div class="col">
-              <div class="row">
-                <div class="col">
-                  Задный фон футера
-                </div>
-                <input type="color" class="form-control form-control-color col-1" v-model="footerColor" />
-              </div>
+            <div class="col-12">
+              <input type="text" class="form-control pt-1" v-model="pageStore.logo" />
             </div>
-            <div class="col">
-              <div class="row">
-                <div class="col">Цвет текста футера </div>
-                <input type="color" class="form-control form-control-color col-1" v-model="footerTextColor" />
-              </div>
-            </div>
-          </div>
-          <div class="row p-1">
-            <div class="col">Дополнительный</div>
-            <input type="color" class="form-control form-control-color col-1" v-model="secondaryColor" />
-          </div>
-          <div class="row p-1">
-            <div class="col">Задный фон избранных блоков</div>
-            <input type="color" class="form-control form-control-color col-1" v-model="ternaryColor" />
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row p-1">
-        <div class="col">
-          <div class="row">
-            Короткий слоган
-            <input type="text" class="form-control" v-model="pageStore.slogan.short" />
           </div>
           <div class="row">
-            Длинный слоган
-            <input type="text" class="form-control" v-model="pageStore.slogan.long" />
+            <div class="col">
+              <div class="row p-1">
+                <div class="col">
+                  Цвет сайта: <span class="bg-main text-color rounded p-1 m-1">{{ mainColor }}</span>
+                  / <span class="bg-secondary text-white rounded p-1 m-1">{{ secondaryColor }}</span>
+                  / <span class="bg-apple-light rounded p-1 m-1">{{ ternaryColor }}</span>
+                  / <span class="bg-footer text-color rounded p-1 m-1">{{ footerColor }}</span></div>
+              </div>
+
+              <div class="row p-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">Главный</div>
+                    <input type="color" class="form-control form-control-color col-1" v-model="mainColor" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      Цвет текста
+                    </div>
+                    <input type="color" class="form-control form-control-color col-1" v-model="textColor" />
+                  </div>
+                </div>
+              </div>
+              <div class="row p-1">
+                <div class="col">
+                  <div class="row">
+                    <div class="col">
+                      Задный фон футера
+                    </div>
+                    <input type="color" class="form-control form-control-color col-1" v-model="footerColor" />
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="row">
+                    <div class="col">Цвет текста футера </div>
+                    <input type="color" class="form-control form-control-color col-1" v-model="footerTextColor" />
+                  </div>
+                </div>
+              </div>
+              <div class="row p-1">
+                <div class="col">Дополнительный</div>
+                <input type="color" class="form-control form-control-color col-1" v-model="secondaryColor" />
+              </div>
+              <div class="row p-1">
+                <div class="col">Задный фон избранных блоков</div>
+                <input type="color" class="form-control form-control-color col-1" v-model="ternaryColor" />
+              </div>
+            </div>
+
           </div>
+
+          <div class="row p-1">
+            <div class="col">
+              <div class="row">
+                Короткий слоган
+                <input type="text" class="form-control" v-model="pageStore.slogan.short" />
+              </div>
+              <div class="row">
+                Длинный слоган
+                <input type="text" class="form-control" v-model="pageStore.slogan.long" />
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-
-      <div class="row p-1">
+      <h2 data-bs-target="#collapseShopDescription" data-bs-toggle="collapse" aria-expanded="true"
+        aria-controls="collapseShopDescription" type="button">Описание
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+      </h2>
+      <div class="row p-2 border-bottom show" id="collapseShopDescription">
         <div class="col">
-          <h2>Описание на главной</h2>
           <SelectAboutTypeBlock />
           <div class="row">
             <div class="col">
