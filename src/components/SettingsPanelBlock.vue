@@ -108,11 +108,11 @@
 
         </div>
       </div>
-      <h2 data-bs-target="#collapseShopDescription" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopDescription" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopDescription" type="button">Описание
-        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
+        <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text"></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopDescription">
+      <div class="row p-2 border-bottom collapse" id="collapseShopDescription">
         <div class="col">
           <SelectAboutTypeBlock />
           <div class="row">
@@ -161,47 +161,47 @@
       </div>
 
 
-      <h2 data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopLinks" type="button">Настройки ссылок
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopLinks">
+      <div class="row p-2 border-bottom collapse" id="collapseShopLinks">
         <SocialsArrayRedactorBlock />
         <NavigationArrayRedactorBlock />
       </div>
-      <h2 data-bs-target="#collapseShopSlider" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopSlider" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopSlider" type="button">Настройки карусели
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopSlider">
+      <div class="row p-2 border-bottom collapse" id="collapseShopSlider">
         <PromoSliderArrayRedactorBlock />
       </div>
-      <h2 data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopAdvantages" type="button">Настройки преимуществ
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopAdvantages">
+      <div class="row p-2 border-bottom collapse" id="collapseShopAdvantages">
         <AdvantagesArrayRedactorBlock />
       </div>
-      <h2 data-bs-target="#collapseShopProducts" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopProducts" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopProducts" type="button">Настройки товаров
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopProducts">
+      <div class="row p-2 border-bottom collapse" id="collapseShopProducts">
         <ProductsArrayRedactorBlock />
       </div>
-      <h2 data-bs-target="#collapseBlogPosts" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseBlogPosts" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseBlogPosts" type="button">Настройки блога
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseBlogPosts">
+      <div class="row p-2 border-bottom collapse" id="collapseBlogPosts">
         <BlogpostsArrayRedactorBlock />
       </div>
-      <h2 data-bs-target="#collapseShopReviews" data-bs-toggle="collapse" aria-expanded="true"
+      <h2 class="collapsed" data-bs-target="#collapseShopReviews" data-bs-toggle="collapse" aria-expanded="false"
         aria-controls="collapseShopReviews" type="button">Настройки отзывов
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
-      <div class="row p-2 border-bottom show" id="collapseShopReviews">
+      <div class="row p-2 border-bottom collapse" id="collapseShopReviews">
         <ReviewsArrayRedactorBlock />
 
         <div class="m-3">
