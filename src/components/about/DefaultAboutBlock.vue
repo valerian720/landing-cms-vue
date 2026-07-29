@@ -8,7 +8,7 @@
       <p class="lead mt-3" v-for="(row, key) in about.text" :key="key">
         {{ row }}
       </p>
-      <a :href="about.actionLink" class="btn btn-apple mt-2">{{ about.actionText }}</a>
+      <a :href="about.actionLink" class="btn btn-main mt-2">{{ about.actionText }}</a>
     </div>
   </div>
 </template>

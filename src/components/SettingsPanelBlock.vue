@@ -218,10 +218,10 @@
         </div>
       </div>
 
-      <!-- <button type="button" name="save-btn" id="save-btn" class="btn btn-apple mx-1">
+      <!-- <button type="button" name="save-btn" id="save-btn" class="btn btn-main mx-1">
         Сохранить
       </button> -->
-      <button type="button" name="save-btn" id="save-btn" class="btn btn-apple mx-1" @click="pageStore.loadDefault()">
+      <button type="button" name="save-btn" id="save-btn" class="btn btn-main mx-1" @click="pageStore.loadDefault()">
         Сбросить
       </button>
       <div v-if="appMode == 'development'">

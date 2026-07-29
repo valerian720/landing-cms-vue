@@ -43,7 +43,7 @@
                   <div class="invalid-feedback" v-if="errors.message">{{ errors.message }}</div>
                 </div>
                 <div class="col-12 text-center mt-4">
-                  <button type="submit" class="btn btn-apple px-5 py-2" :disabled="loading">
+                  <button type="submit" class="btn btn-main px-5 py-2" :disabled="loading">
                     <span v-if="loading" class="spinner-border spinner-border-sm me-2" role="status"
                       aria-hidden="true"></span>
                     <i v-else class="bi bi-send me-2"></i>

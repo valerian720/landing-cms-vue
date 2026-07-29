@@ -82,7 +82,7 @@ body {
   color: var(--secondary-color) !important;
 }
 
-.btn-apple {
+.btn-main {
   background-color: var(--secondary-color);
   color: white;
   border-radius: 50px;
@@ -91,7 +91,7 @@ body {
   transition: 0.2s;
 }
 
-.btn-apple:hover {
+.btn-main:hover {
   background-color: color-mix(in oklab, var(--secondary-color), black 20%);
   color: white;
 }

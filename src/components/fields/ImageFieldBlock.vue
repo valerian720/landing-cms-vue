@@ -13,7 +13,7 @@
 
         <!-- -->
         <div class="d-flex justify-content-center gap-2 flex-wrap">
-          <button class="btn btn-apple" @click="selectFile">
+          <button class="btn btn-main" @click="selectFile">
             <i class="bi bi-upload me-1"></i> Выбрать
           </button>
           <button v-if="imagePreview" class="btn btn-warning  rounded-5" @click="removeImage">

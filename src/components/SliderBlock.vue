@@ -13,7 +13,7 @@
           <div class="carousel-caption d-none d-md-block">
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.description }}</p>
-            <a :href="slide.actionLink" class="btn btn-apple mt-2">{{ slide.actionText }}</a>
+            <a :href="slide.actionLink" class="btn btn-main mt-2">{{ slide.actionText }}</a>
           </div>
         </div>
       </div>

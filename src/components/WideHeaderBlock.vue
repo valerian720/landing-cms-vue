@@ -15,7 +15,7 @@
             <a class="nav-link" :href="nav.url">{{ nav.title }}</a>
           </li>
         </ul>
-        <a href="#" class="btn btn-apple ms-lg-3">Корзина <i class="bi bi-bag-check"></i></a>
+        <a href="#" class="btn btn-main ms-lg-3">Корзина <i class="bi bi-bag-check"></i></a>
       </div>
     </div>
   </nav>

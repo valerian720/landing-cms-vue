@@ -1,7 +1,7 @@
 <template>
   <div class="container mt-4">
     <!-- Кнопка добавления -->
-    <button class="btn btn-apple mb-3" @click="openCreateModal">Добавить</button>
+    <button class="btn btn-main mb-3" @click="openCreateModal">Добавить</button>
 
     <!-- Список элементов -->
     <div v-if="items.length === 0" class="alert alert-info">Нет данных</div>
@@ -39,7 +39,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary rounded-5" @click="closeModal">Отмена</button>
-            <button type="button" class="btn btn-apple" @click="saveItem">Сохранить</button>
+            <button type="button" class="btn btn-main" @click="saveItem">Сохранить</button>
           </div>
         </div>
       </div>
