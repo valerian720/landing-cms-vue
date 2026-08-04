@@ -15,7 +15,7 @@
                       <h5 class="card-title fw-bold">{{ product.name }}</h5>
                       <p class="card-text text-muted">{{ product.shortDescription }}</p>
                       <div class="price-tag">{{ product.price }} {{ product.priceSymbol }}</div>
-                      <a :href="product.url" class="btn btn-outline-apple mt-3">В корзину <i
+                      <a :href="product.url" class="btn btn-outline-main mt-3">В корзину <i
                           class="bi bi-cart-plus"></i></a>
                     </div>
                   </div>

@@ -6,7 +6,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <h2 class="" data-bs-toggle="collapse" data-bs-target="#collapseShopSettings" aria-expanded="true"
+      <h2 class="unselectable" data-bs-toggle="collapse" data-bs-target="#collapseShopSettings" aria-expanded="true"
         aria-controls="collapseShopSettings" type="button">Настройки магазина
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
@@ -108,8 +108,8 @@
 
         </div>
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseShopDescription" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopDescription" type="button">Описание
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopDescription" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopDescription" type="button">Описание
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text"></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopDescription">
@@ -161,44 +161,44 @@
       </div>
 
 
-      <h2 class="collapsed" data-bs-target="#collapseShopLinks" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopLinks" type="button">Настройки ссылок
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopLinks" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopLinks" type="button">Настройки ссылок
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopLinks">
         <SocialsArrayRedactorBlock />
         <NavigationArrayRedactorBlock />
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseShopSlider" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopSlider" type="button">Настройки карусели
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopSlider" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopSlider" type="button">Настройки карусели
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopSlider">
         <PromoSliderArrayRedactorBlock />
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopAdvantages" type="button">Настройки преимуществ
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopAdvantages" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopAdvantages" type="button">Настройки преимуществ
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopAdvantages">
         <AdvantagesArrayRedactorBlock />
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseShopProducts" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopProducts" type="button">Настройки товаров
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopProducts" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopProducts" type="button">Настройки товаров
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopProducts">
         <ProductsArrayRedactorBlock />
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseBlogPosts" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseBlogPosts" type="button">Настройки блога
+      <h2 class="collapsed unselectable" data-bs-target="#collapseBlogPosts" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseBlogPosts" type="button">Настройки блога
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseBlogPosts">
         <BlogpostsArrayRedactorBlock />
       </div>
-      <h2 class="collapsed" data-bs-target="#collapseShopReviews" data-bs-toggle="collapse" aria-expanded="false"
-        aria-controls="collapseShopReviews" type="button">Настройки отзывов
+      <h2 class="collapsed unselectable" data-bs-target="#collapseShopReviews" data-bs-toggle="collapse"
+        aria-expanded="false" aria-controls="collapseShopReviews" type="button">Настройки отзывов
         <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
       </h2>
       <div class="row p-2 border-bottom collapse" id="collapseShopReviews">
@@ -226,7 +226,7 @@
       </button>
       <div v-if="appMode == 'development'">
         <h3 data-bs-target="#collapseRawData" data-bs-toggle="collapse" aria-controls="collapseRawData" type="button"
-          class="collapsed" aria-expanded="false">
+          class="collapsed unselectable" aria-expanded="false">
           Raw data:
           <i class="bi bi-chevron-down ms-2 collapse-icon d-inline-flex small-text "></i>
         </h3>
