@@ -6,7 +6,7 @@
           <img class="w-100" :src="item.img" alt="img">
           {{ item.icon }} <strong>{{ item.title }}</strong>
           <p>{{ item.description }}</p>
-          <p>// {{ item.actionText }} //</p>
+          <p><a href="javascript:void(0);" class="btn btn-main mt-2">{{ item.actionText }}</a></p>
         </div>
       </template>
 
