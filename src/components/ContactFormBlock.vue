@@ -17,27 +17,29 @@
               </div>
             </transition>
 
-            <form @submit.prevent="handleSubmit">
+            <form @submit.prevent="handleSubmit" autocomplete="on">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label">Ваше имя *</label>
-                  <input type="text" class="form-control" :class="{ 'is-invalid': errors.name }"
-                    placeholder="Иван Петров" v-model="form.name" required>
+                  <input name="name" autocomplete="name" type="text" class="form-control"
+                    :class="{ 'is-invalid': errors.name }" placeholder="Иван Петров" v-model="form.name" required>
                   <div class="invalid-feedback" v-if="errors.name">{{ errors.name }}</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label">Email *</label>
-                  <input type="email" class="form-control" :class="{ 'is-invalid': errors.email }"
-                    placeholder="ivan@example.com" v-model="form.email" required>
+                  <input name="email" autocomplete="email" type="email" class="form-control"
+                    :class="{ 'is-invalid': errors.email }" placeholder="ivan@example.com" v-model="form.email"
+                    required>
                   <div class="invalid-feedback" v-if="errors.email">{{ errors.email }}</div>
                 </div>
                 <div class="col-12">
                   <label class="form-label">Телефон (необязательно)</label>
-                  <input type="tel" class="form-control" placeholder="+7 999 123 45 67" v-model="form.phone">
+                  <input name="phone" autocomplete="tel" type="tel" class="form-control" placeholder="+7 999 123 45 67"
+                    v-model="form.phone">
                 </div>
                 <div class="col-12">
                   <label class="form-label">Сообщение *</label>
-                  <textarea class="form-control" :class="{ 'is-invalid': errors.message }" rows="4"
+                  <textarea name="message" class="form-control" :class="{ 'is-invalid': errors.message }" rows="4"
                     placeholder="Напишите, какой сорт вас интересует или задайте вопрос..." v-model="form.message"
                     required></textarea>
                   <div class="invalid-feedback" v-if="errors.message">{{ errors.message }}</div>

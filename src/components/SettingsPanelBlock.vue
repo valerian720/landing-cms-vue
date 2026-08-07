@@ -118,16 +118,17 @@
           <div class="row">
             <div class="col">
               <div class="mb-3">
-                <label for="" class="form-label">Заголовок</label>
-                <input type="text" class="form-control" v-model="pageStore.about.title" />
+                <label for="settings-about-title" class="form-label">Заголовок</label>
+                <input type="text" class="form-control" id="settings-about-title" v-model="pageStore.about.title" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="mb-3">
-                <label for="" class="form-label">Текст</label>
-                <textarea rows="20" class="form-control" :value="pageStore.about.text.join('\n\n')"
+                <label for="settings-about-text" class="form-label">Текст</label>
+                <textarea rows="20" class="form-control" id="settings-about-text"
+                  :value="pageStore.about.text.join('\n\n')"
                   @change="(e) => { pageStore.about.text = e.target.value.split('\n\n') }"></textarea>
               </div>
             </div>
@@ -135,25 +136,27 @@
           <div class="row">
             <div class="col">
               <div class="mb-3">
-                <label for="" class="form-label">Изображение</label>
+                <label for="settings-about-img" class="form-label">Изображение</label>
                 <ImageFieldBlock v-model="pageStore.about.imgUrl" class="pb-1" />
-                <input type="text" class="form-control" v-model="pageStore.about.imgUrl" />
+                <input type="text" class="form-control" id="settings-about-img" v-model="pageStore.about.imgUrl" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="mb-3">
-                <label for="" class="form-label">Текст ссылки</label>
-                <input type="text" class="form-control" v-model="pageStore.about.actionText" />
+                <label for="settings-about-action-text" class="form-label">Текст ссылки</label>
+                <input type="text" class="form-control" id="settings-about-action-text"
+                  v-model="pageStore.about.actionText" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <div class="mb-3">
-                <label for="" class="form-label">Ссылка</label>
-                <input type="text" class="form-control" v-model="pageStore.about.actionLink" />
+                <label for="settings-about-action-link" class="form-label">Ссылка</label>
+                <input type="text" class="form-control" id="settings-about-action-link"
+                  v-model="pageStore.about.actionLink" />
               </div>
             </div>
           </div>
