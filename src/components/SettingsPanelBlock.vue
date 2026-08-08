@@ -36,7 +36,7 @@
               <ImageFieldBlock v-model="pageStore.logo" />
             </div>
             <div class="col-12">
-              <input type="text" class="form-control pt-1" v-model="pageStore.logo" />
+              <input type="text" class="form-control pt-1" name="settings-logo" v-model="pageStore.logo" />
             </div>
           </div>
           <div class="row">
@@ -97,11 +97,11 @@
             <div class="col">
               <div class="row">
                 Короткий слоган
-                <input type="text" class="form-control" v-model="pageStore.slogan.short" />
+                <input type="text" class="form-control" name="short-slogan" v-model="pageStore.slogan.short" />
               </div>
               <div class="row">
                 Длинный слоган
-                <input type="text" class="form-control" v-model="pageStore.slogan.long" />
+                <input type="text" class="form-control" name="long-slogan" v-model="pageStore.slogan.long" />
               </div>
             </div>
           </div>

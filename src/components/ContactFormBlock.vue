@@ -20,26 +20,27 @@
             <form @submit.prevent="handleSubmit" autocomplete="on">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label">Ваше имя *</label>
-                  <input name="name" autocomplete="name" type="text" class="form-control"
+                  <label class="form-label" for="contactform-name">Ваше имя *</label>
+                  <input id="contactform-name" name="name" autocomplete="name" type="text" class="form-control"
                     :class="{ 'is-invalid': errors.name }" placeholder="Иван Петров" v-model="form.name" required>
                   <div class="invalid-feedback" v-if="errors.name">{{ errors.name }}</div>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label">Email *</label>
-                  <input name="email" autocomplete="email" type="email" class="form-control"
+                  <label class="form-label" for="contactform-email">Email *</label>
+                  <input id="contactform-email" name="email" autocomplete="email" type="email" class="form-control"
                     :class="{ 'is-invalid': errors.email }" placeholder="ivan@example.com" v-model="form.email"
                     required>
                   <div class="invalid-feedback" v-if="errors.email">{{ errors.email }}</div>
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Телефон (необязательно)</label>
-                  <input name="phone" autocomplete="tel" type="tel" class="form-control" placeholder="+7 999 123 45 67"
-                    v-model="form.phone">
+                  <label class="form-label" for="contactform-tel">Телефон (необязательно)</label>
+                  <input id="contactform-tel" name="phone" autocomplete="tel" type="tel" class="form-control"
+                    placeholder="+7 999 123 45 67" v-model="form.phone">
                 </div>
                 <div class="col-12">
-                  <label class="form-label">Сообщение *</label>
-                  <textarea name="message" class="form-control" :class="{ 'is-invalid': errors.message }" rows="4"
+                  <label class="form-label" for="contactform-msg">Сообщение *</label>
+                  <textarea id="contactform-msg" name="message" class="form-control"
+                    :class="{ 'is-invalid': errors.message }" rows="4"
                     placeholder="Напишите, какой сорт вас интересует или задайте вопрос..." v-model="form.message"
                     required></textarea>
                   <div class="invalid-feedback" v-if="errors.message">{{ errors.message }}</div>
