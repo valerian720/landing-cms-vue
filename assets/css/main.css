@@ -196,6 +196,10 @@ body {
   width: 1.5em;
   height: 1.5em;
 }
+.navbar-brand img {
+  -webkit-user-select: none;
+  user-select: none;
+}
 
 .blog-card img {
   height: 180px;
