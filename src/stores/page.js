@@ -23,7 +23,7 @@ export const usePageStore = defineStore("page", () => {
     },
     blog: { displayLimit: 3, list: [] },
     ratingThreshhold: { value: 0 },
-    reviews: [],
+    reviews: { selectedType: "default", list: [] },
     products: { displayAmount: 5, list: [] },
     navigationLinks: { displayDepthLevel: 1, list: [] },
   });
@@ -198,6 +198,7 @@ export const usePageStore = defineStore("page", () => {
     };
     state.ratingThreshhold.value = 4;
     state.reviews = {
+      selectedType: "default",
       list: [
         {
           rating: 5.0,
