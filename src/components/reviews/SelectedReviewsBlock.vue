@@ -1,5 +1,5 @@
 <template>
-  <section id="reviews" class="bg-apple-light py-5 my-4">
+  <div class="bg-apple-light py-5 my-4">
     <div class="container">
       <h2 class="section-title text-center w-100">Отзывы</h2>
       <div class="row g-4 mt-3" :key="ratingThreshhold">
@@ -21,7 +21,7 @@
         </template>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 

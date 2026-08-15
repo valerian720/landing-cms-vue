@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SelectReviewsTypeBlock />
     <ArrayRedactorWrapper :section-name="sectionName">
       <!-- Слот для отображения одного элемента в списке -->
       <template #item-display="{ item }">
@@ -51,9 +52,10 @@
 <script>
 import ImageFieldBlock from '@/components/fields/ImageFieldBlock.vue';
 import ArrayRedactorWrapper from '@/components/settings/wrappers/ArrayRedactorWrapper.vue';
+import SelectReviewsTypeBlock from '@/components/settings/selectors/SelectReviewsTypeBlock.vue'
 
 export default {
-  components: { ArrayRedactorWrapper, ImageFieldBlock },
+  components: { ArrayRedactorWrapper, ImageFieldBlock, SelectReviewsTypeBlock },
   setup() {
     const sectionName = 'reviews';
     return { sectionName };

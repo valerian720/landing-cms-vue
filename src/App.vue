@@ -22,7 +22,7 @@
   <SelectedBlogBlock :posts="pageStore.blog" />
 
   <!-- ПОСЛЕДНИЕ ОТЗЫВЫ -->
-  <SelectedReviewsBlock :reviews="pageStore.reviews" :ratingThreshhold="pageStore.ratingThreshhold.value" />
+  <ReviewsBlock :reviews="pageStore.reviews" :ratingThreshhold="pageStore.ratingThreshhold.value" />
 
   <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
   <ContactFormBlock />
@@ -43,7 +43,7 @@ import AdvantagesBlock from '@/components/AdvantagesBlock.vue'
 import ProductsBlock from '@/components/ProductsBlock.vue'
 import AboutBlock from '@/components/AboutBlock.vue'
 import SelectedBlogBlock from '@/components/SelectedBlogBlock.vue'
-import SelectedReviewsBlock from '@/components/SelectedReviewsBlock.vue'
+import ReviewsBlock from '@/components/ReviewsBlock.vue'
 import ContactFormBlock from '@/components/ContactFormBlock.vue'
 import FooterBlock from '@/components/FooterBlock.vue'
 import SettingsPanelBlock from '@/components/SettingsPanelBlock.vue'
@@ -61,7 +61,7 @@ export default {
     ProductsBlock,
     AboutBlock,
     SelectedBlogBlock,
-    SelectedReviewsBlock,
+    ReviewsBlock,
     ContactFormBlock,
     FooterBlock,
     SettingsPanelBlock,
