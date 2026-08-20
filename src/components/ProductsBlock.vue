@@ -6,7 +6,7 @@
 
 
 <script>
-import { productsComponents } from '@/components/products';
+import { productsComponents } from '@/components/Products';
 export default {
   props: {
     products: Object,

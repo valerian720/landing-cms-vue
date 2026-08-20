@@ -11,7 +11,7 @@
 
 <script>
 import { usePageStore } from '@/stores/page';
-import { productsComponents } from '@/components/products';
+import { productsComponents } from '@/components/Products';
 
 export default {
   setup() {
