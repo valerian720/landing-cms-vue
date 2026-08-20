@@ -24,7 +24,7 @@ export const usePageStore = defineStore("page", () => {
     blog: { displayLimit: 3, list: [] },
     ratingThreshhold: { value: 0 },
     reviews: { selectedType: "default", list: [] },
-    products: { displayAmount: 5, list: [] },
+    products: { selectedType: "default", displayAmount: 5, list: [] },
     navigationLinks: { displayDepthLevel: 1, list: [] },
   });
 
@@ -280,6 +280,7 @@ export const usePageStore = defineStore("page", () => {
         },
       ],
       displayAmount: 5,
+      selectedType: "simple",
     };
     state.navigationLinks = {
       list: [

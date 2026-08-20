@@ -1,6 +1,6 @@
 <template>
   <section id="reviews" class="p-0 m-0">
-    <component :is="currentAboutComponent.block" :reviews="reviews" :ratingThreshhold="ratingThreshhold" />
+    <component :is="currentComponent.block" :reviews="reviews" :ratingThreshhold="ratingThreshhold" />
   </section>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     ratingThreshhold: Number,
   },
   computed: {
-    currentAboutComponent() {
+    currentComponent() {
       return reviewsComponents[this.reviews.selectedType] || reviewsComponents.default
     }
   },

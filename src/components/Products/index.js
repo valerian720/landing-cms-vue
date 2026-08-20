@@ -1,5 +1,7 @@
-import defaultBlock from "./ProductsBlock.vue";
+import ProductsCaruselBlock from "./ProductsCaruselBlock.vue";
+import ProductsSimpleBlock from "./ProductslistBlock.vue";
 
 export const productsComponents = {
-  default: { block: defaultBlock, name: "Обычный" },
+  default: { block: ProductsCaruselBlock, name: "Карусель" },
+  simple: { block: ProductsSimpleBlock, name: "Список" },
 };
